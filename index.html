@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Vanshu 💖</title>
+    
+    <!-- This imports our romantic fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 
+      ALL CSS is "inline" in this <style> tag 
+    -->
+    <style>
+        /* --- Basic Setup --- */
+        body {
+            /* A soft, love-themed pink background */
+            background-color: #fdf2f2; 
+            font-family: 'Montserrat', sans-serif; /* Clean font for text */
+            color: #3b3b3b;
+            margin: 0;
+            padding: 20px;
+            /* Prevents flickering during animations */
+            -webkit-font-smoothing: antialiased;
+            /* Hide horizontal scrollbar from animations */
+            overflow-x: hidden;
+        }
+        
+        /* --- NEW: Welcome Screen --- */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fdf2f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease-out;
+        }
+        
+        #welcome-screen h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #c0392b;
+            text-align: center;
+            /* NEW: Add a subtle shadow to make the text pop */
+            text-shadow: 0 2px 10px rgba(192, 57, 43, 0.2);
+        }
+
+        /* NEW: Style for the welcome subtitle */
+        #welcome-screen p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: -10px;
+        }
+
+        #enter-button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background-color: #c0392b;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+            transition: all 0.3s ease;
+            /* NEW: Add the pulsing animation */
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        #enter-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(192, 57, 43, 0.4);
+            /* NEW: Stop the pulse on hover to be replaced by the scale */
+            animation: none;
+        }
+        
+        /* --- NEW: Falling Hearts Animation --- */
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Puts it behind all content */
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(192, 57, 43, 0.3); /* Soft red hearts */
+            animation: fall 10s linear infinite;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* NEW: Keyframes for the button pulse */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+            }
+        }
+
+        /* --- Page Animation Setup --- */
+        /* 'page' is the base class for all content sections */
+        .page {
+            display: none; /* All pages are hidden by default */
+        }
+        
+        /* 'active' is the class we add with JavaScript to show a page */
+        .page.active {
+            display: block;
+            /* Simple, elegant fade-in animation */
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- The Header (Homepage) --- */
+        .header {
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        .header h1 {
+            /* The beautiful, romantic script font */
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #c0392b; /* A deep, wax-seal red */
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 5px;
+        }
+        
+        /* --- NEW: Countdown Timer Style --- */
+        #countdown {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #c0392b;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- The Envelope Grid (Homepage) --- */
+        .letter-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .letter-grid.active {
+            display: grid;
+        }
+
+        /* --- The "Envelope" Card Style --- */
+        .letter-envelope {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .letter-envelope.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .letter-envelope:hover {
+            transform: scale(1.05) rotate(-1.5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .letter-envelope span {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .letter-envelope::before {
+            content: '💌';
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* --- The "Sheet of Paper" Style (For Letters) --- */
+        .letter-paper {
+            background: #ffffff;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            line-height: 1.8;
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+        }
+
+        .letter-paper h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #c0392b;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .letter-paper img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- The Back Button --- */
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            color: #c0392b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+        
+        /* --- NEW: Enhanced Responsiveness --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1, #welcome-screen h1 {
+                /* NEW: Adjusted font size for mobile */
+                font-size: 3rem;
+            }
+            
+            #countdown {
+                font-size: 1.1rem;
+            }
+            
+            .letter-paper {
+                padding: 30px 25px;
+                margin: 20px auto;
+            }
+            
+            .letter-envelope span {
+                font-size: 1.3rem;
+            }
+            
+            #enter-button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- 
+      =================================================
+      NEW: WELCOME SCREEN (Visible on load)
+      =================================================
+    -->
+    <div id="welcome-screen">
+        <h1>For My Dearest Bhallu 💖</h1>
+        <!-- NEW: Added a sweet subtitle -->
+        <p>I made this just for you.</p>
+        <div id="enter-button">Click to open your gift</div>
+    </div>
+    
+    <!-- 
+      =================================================
+      NEW: FALLING HEARTS CONTAINER
+      =================================================
+    -->
+    <div class="heart-container"></div>
+    
+    <!-- 
+      =================================================
+      NEW: MUSIC PLAYER (Hidden)
+      =================================================
+      *** HOW TO ADD MUSIC ***
+      1. Add your song file (e.g., 'our-song.mp3') to the same folder as this file.
+      2. Uncomment the <audio> tag below and change the src.
+      3. Uncomment the 'document.getElementById...' line in the JavaScript.
+    -->
+    <!-- <audio id="our-song" src="our-song.mp3" loop></audio> -->
+
+
+    <!-- 
+      =================================================
+      HOMEPAGE CONTENT (Hidden by default)
+      =================================================
+    -->
+    <header class="header page" id="page-home-header">
+        <h1>For My Dearest Bhallu 💖</h1>
+        <p>A collection of letters, sealed with my love.</p>
+        
+        <!-- NEW: Countdown Timer -->
+        <div id="countdown"></div>
+    </header>
+
+    <main class="letter-grid page" id="page-home-grid">
+        <!-- 
+          Each envelope is now a `div` with a `data-page` attribute.
+          This tells the JavaScript which "page" (section) to open.
+        -->
+        <div class="letter-envelope" data-page="miss-you">
+            <span>Open when...<br>you miss me</span>
+        </div>
+
+        <div class="letter-envelope" data-page="bad-day">
+            <span>Open when...<br>you've had a bad day</span>
+        </div>
+
+        <div class="letter-envelope" data-page="laugh">
+            <span>Open when...<br>you want to laugh</span>
+        </div>
+
+        <div class="letter-envelope" data-page="happy">
+            <span>Open when...<br>you're feeling happy</span>
+        </div>
+
+        <div class="letter-envelope" data-page="anniversary">
+            <span>Open when...<br>it's our anniversary</span>
+        </div>
+
+        <div class="letter-envelope" data-page="bored">
+            <span>Open when...<br>you're feeling bored</span>
+        </div>
+        
+    </main>
+
+    <!-- 
+      =================================================
+      LETTER PAGES (Hidden by default)
+      =================================================
+    -->
+
+    <!-- 
+      PAGE 1: MISS YOU
+      All letters follow this template.
+    -->
+    <section class="letter-paper page" id="page-miss-you">
+        
+        <!-- ===== START EDITING HERE ===== -->
+
+        <h1>My Dearest Vanshu,</h1>
+        
+        <p>
+            You opened this letter because you're missing me, and that makes me
+            both happy and sad. Happy because it means you're thinking of me, 
+            and sad because I wish I was right there with you, so you wouldn't
+            have to miss me at all.
+        </p>
+
+        <!-- 
+          *** HOW TO ADD YOUR IMAGE ***
+          1. Create a folder named 'images' in the same directory as this file.
+          2. Add your photo (e.g., 'photo-of-us.jpg') to that 'images' folder.
+          3. Change the 'src' below from 'https://placehold.co/...' to 'images/photo-of-us.jpg'
+        -->
+        <img src="https://placehold.co/600x400/fdf2f2/c0392b?text=Add+Your+Favorite+Photo" alt="A special memory of us">
+
+        <p>
+            Being far away is tough, but I want you to know something. 
+            Anytime you miss me, just close your eyes and remember... 
+            <strong>(ADD A BEAUTIFUL SHARED MEMORY HERE)</strong>.
+        </p>
+        
+        <p>
+            I'm counting down the seconds until I see you again.
+        </p>
+        
+        <p>
+            All my love,<br>
+            Ritesh
+        </p>
+
+        <!-- ===== STOP EDITING HERE ===== -->
+
+        <!-- This button takes her back to the homepage -->
+        <div class="back-button" data-page="home">← Back to all letters</div>
+    </section>
+
+    <!-- 
+      PAGE 2: BAD DAY
+    -->
+    <section class="letter-paper page" id="page-bad-day">
+        
+        <!-- ===== START EDITING HERE ===== -->
+
+        <h1>For my love,</h1>
+        
+        <p>
+            I'm so sorry you're having a bad day. If I were there, 
+            I'd give you the biggest hug right now and not let go.
+        </p>
+        <p>
+            Since I can't be, I want you to do three things for me:
+        </p>
+        <ol>
+            <li>Take a deep breath. In and out. Go on, do it.</li>
+            <li>Close your eyes and remember <strong>(ADD A FUNNY OR SWEET MEMORY)</strong>.</li>
+            <li>Smile. Even if it's a small one.</li>
+        </ol>
+        <p>
+            Whatever is wrong, it will pass. You are the strongest, most resilient
+            person I know. This day is no match for you.
+        </p>
+
+        <!-- 
+          *** HOW TO ADD A FUNNY GIF ***
+          1. Find a GIF on Giphy (https://giphy.com/).
+          2. Click "Copy Link" and copy the "GIF Link" (ends in .gif).
+          3. Change the 'src' below to that link.
+        -->
+        <img src="https://placehold.co/600x338/fdf2f2/c0392b?text=Add+A+Cute+GIF+Here" alt="A cute or funny GIF to make her smile">
+
+        <p>
+            Things will be better tomorrow. I love you so much.
+        </p>
+
+        <p>
+            Yours,<br>
+            Ritesh
+        </p>
+
+        <!-- ===== STOP EDITING HERE ===== -->
+
+        <div class="back-button" data-page="home">← Back to all letters</div>
+    </section>
+
+    <!-- 
+      PAGE 3: LAUGH
+    -->
+    <section class="letter-paper page" id="page-laugh">
+        
+        <!-- ===== START EDITING HERE ===== -->
+
+        <h1>You want to laugh?</h1>
+        
+        <p>
+            Well, you're in luck. Do you remember that one time when...
+            <strong>(ADD YOUR FUNNIEST SHARED STORY OR INSIDE JOKE HERE)</strong>.
+        </p>
+        <p>
+            I still laugh just thinking about it.
+        </p>
+
+        <!-- 
+          *** HOW TO ADD A YOUTUBE VIDEO ***
+          1. Go to your private YouTube video.
+          2. Click "Share" -> "Embed".
+          3. Copy the ENTIRE '<iframe ...></iframe>' code.
+          4. Paste that code right below this comment, replacing the placeholder image.
+          (Make sure to set aspect-ratio in the style to look good)
+        -->
+        <img src="https://placehold.co/600x338/fdf2f2/c0392b?text=Add+A+Funny+Video+Embed+Here" alt="A funny video" style="aspect-ratio: 16/9; width: 100%; object-fit: cover;">
+        
+        <p>
+            Hope this made you smile!
+        </p>
+        
+        <p>
+            Love,<br>
+            Ritesh
+        </p>
+
+        <!-- ===== STOP EDITING HERE ===== -->
+
+        <div class="back-button" data-page="home">← Back to all letters</div>
+    </section>
+
+    <!-- 
+      PAGE 4: HAPPY
+    -->
+    <section class="letter-paper page" id="page-happy">
+        
+        <!-- ===== START EDITING HERE ===== -->
+        <h1>You're happy!</h1>
+        <p>
+            And that makes ME the happiest person in the world.
+        </p>
+        <p>
+            I love seeing you happy. Your smile brightens up my entire world.
+            Whatever is making you feel so good right now, hold onto it. 
+            You deserve every bit of happiness.
+        </p>
+        <p>
+            Here's a song to keep the good vibes going.
+        </p>
+        <!-- 
+          *** HOW TO ADD A SPOTIFY PLAYLIST ***
+          1. Go to your Spotify playlist.
+          2. Click the "..." -> "Share" -> "Embed Playlist".
+          3. Copy the '<iframe ...></iframe>' code.
+          4. Paste that code right below this comment, replacing the placeholder.
+        -->
+        <img src="https://placehold.co/600x380/fdf2f2/c0392b?text=Add+A+Spotify+Playlist+Embed" alt="A Spotify playlist embed" style="width: 100%;">
+
+        <p>
+            Keep smiling, my love.
+        </p>
+        <p>
+            Ritesh
+        </p>
+        <!-- ===== STOP EDITING HERE ===== -->
+
+        <div class="back-button" data-page="home">← Back to all letters</div>
+    </section>
+
+    <!-- 
+      ADD MORE PAGES HERE!
+      Just copy the whole <section> ... </section> block
+      and change the 'id' (e.g., id="page-anniversary") and the content.
+      Then, add a new <div class="letter-envelope" data-page="anniversary">...</div>
+      to the .letter-grid at the top.
+    -->
+    <section class="letter-paper page" id="page-anniversary">
+        <!-- ... Your content for 'anniversary' ... -->
+        <h1>Happy Anniversary, My Love</h1>
+        <p>...</p>
+        <div class="back-button" data-page="home">← Back to all letters</div>
+    </section>
+
+    <section class="letter-paper page" id="page-bored">
+        <!-- ... Your content for 'bored' ... -->
+        <h1>Bored, are we?</h1>
+        <p>Here's a little quiz about us...</p>
+        <div class="back-button" data-page="home">← Back to all letters</div>
+    </section>
+
+
+    <!-- 
+      =================================================
+      JavaScript for Functionality
+      =================================================
+      This script handles the page navigation and animations.
+    -->
+    <script>
+        // Wait for the page to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const allPages = document.querySelectorAll('.page');
+            const allButtons = document.querySelectorAll('[data-page]');
+            const enterButton = document.getElementById('enter-button');
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const heartContainer = document.querySelector('.heart-container');
+
+            // --- 1. Page Navigation Logic ---
+            function showPage(pageId) {
+                // Hide all pages
+                allPages.forEach(page => {
+                    page.classList.remove('active');
+                });
+
+                // Show the requested page(s)
+                if (pageId === 'home') {
+                    // Homepage is two parts: header and grid
+                    document.getElementById('page-home-header').classList.add('active');
+                    document.getElementById('page-home-grid').classList.add('active');
+                } else {
+                    const pageToShow = document.getElementById('page-' + pageId);
+                    if (pageToShow) {
+                        pageToShow.classList.add('active');
+                        // Scroll to the top of the new page
+                        window.scrollTo(0, 0);
+                    }
+                }
+            }
+
+            // --- 2. "Enter" Button Logic ---
+            enterButton.addEventListener('click', () => {
+                // Fade out the welcome screen
+                welcomeScreen.style.opacity = '0';
+                setTimeout(() => {
+                    welcomeScreen.style.display = 'none';
+                }, 1000); // 1s fade
+
+                // Show the homepage
+                showPage('home');
+
+                // --- 3. Staggered Animation for Envelopes ---
+                const letters = document.querySelectorAll('.letter-envelope');
+                letters.forEach((letter, index) => {
+                    setTimeout(() => {
+                        letter.classList.add('visible');
+                    }, index * 150 + 500); // Start after 500ms
+                });
+                
+                // --- 4. (OPTIONAL) Play Music ---
+                // Uncomment the line below to play your song
+                // document.getElementById('our-song').play();
+            });
+
+            // --- 5. Add click listeners to all navigation buttons ---
+            allButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pageId = button.dataset.page;
+                    showPage(pageId);
+                });
+            });
+            
+            // --- 6. Live Countdown Timer ---
+            function startCountdown() {
+                // *** SET YOUR TARGET DATE HERE ***
+                // Format: "Month Day, Year HH:MM:SS"
+                // Example: "Jan 1, 2026 00:00:00"
+                const targetDate = new Date("Feb 14, 2026 09:00:00").getTime();
+                
+                const countdownElement = document.getElementById('countdown');
+
+                const interval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = targetDate - now;
+
+                    // Calculate days, hours, minutes, seconds
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        countdownElement.innerHTML = "The wait is over! ❤️";
+                    } else {
+                        countdownElement.innerHTML = `Counting down...<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
+                    }
+                }, 1000);
+            }
+            
+            // --- 7. Create Falling Hearts ---
+            function createHearts() {
+                const heartCount = 15; // Number of hearts
+                for (let i = 0; i < heartCount; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '💖';
+                    heart.style.left = `${Math.random() * 100}vw`;
+                    heart.style.animationDelay = `${Math.random() * 10}s`;
+                    heart.style.fontSize = `${Math.random() * 1 + 0.5}rem`; // Vary size
+                    heart.style.animationDuration = `${Math.random() * 5 + 5}s`; // Vary speed
+                    heartContainer.appendChild(heart);
+                }
+            }
+
+            // Start the animations!
+            startCountdown();
+            createHearts();
+
+        });
+    </script>
+
+</body>
+</html>
