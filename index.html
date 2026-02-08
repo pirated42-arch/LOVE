@@ -1,710 +1,1661 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Dearest Vanshu 💖</title>
-    
-    <!-- This imports our romantic fonts from Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- 
-      ALL CSS is "inline" in this <style> tag 
-    -->
+    <title>For You | Our Universe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
-        /* --- Basic Setup --- */
-        body {
-            /* A soft, love-themed pink background */
-            background-color: #fdf2f2; 
-            font-family: 'Montserrat', sans-serif; /* Clean font for text */
-            color: #3b3b3b;
+        :root {
+            --cream: #FFF8F0;
+            --blush: #FFE4E1;
+            --rose-soft: #FFB6C1;
+            --rose-deep: #FF69B4;
+            --lavender: #E6E6FA;
+            --peach: #FFDAB9;
+            --gold: #FFD700;
+            --champagne: #F7E7CE;
+            --sage: #D4E4D1;
+        }
+
+        * {
             margin: 0;
-            padding: 20px;
-            /* Prevents flickering during animations */
-            -webkit-font-smoothing: antialiased;
-            /* Hide horizontal scrollbar from animations */
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            min-height: 100vh;
+            background: linear-gradient(180deg,
+                    var(--cream) 0%,
+                    var(--blush) 20%,
+                    var(--lavender) 50%,
+                    var(--blush) 80%,
+                    var(--cream) 100%);
+            background-attachment: fixed;
+            color: #5a4a4a;
         }
-        
-        /* --- NEW: Welcome Screen --- */
-        #welcome-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #fdf2f2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            transition: opacity 1s ease-out;
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
         }
-        
-        #welcome-screen h1 {
+
+        .font-handwriting {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: #c0392b;
-            text-align: center;
-            /* NEW: Add a subtle shadow to make the text pop */
-            text-shadow: 0 2px 10px rgba(192, 57, 43, 0.2);
         }
 
-        /* NEW: Style for the welcome subtitle */
-        #welcome-screen p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: #555;
-            margin-top: -10px;
+        .font-cute {
+            font-family: 'Quicksand', sans-serif;
         }
 
-        #enter-button {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 1.2rem;
-            color: #ffffff;
-            background-color: #c0392b;
-            padding: 15px 30px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
-            transition: all 0.3s ease;
-            /* NEW: Add the pulsing animation */
-            animation: pulse 2s infinite ease-in-out;
-        }
-        
-        #enter-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(192, 57, 43, 0.4);
-            /* NEW: Stop the pulse on hover to be replaced by the scale */
-            animation: none;
-        }
-        
-        /* --- NEW: Falling Hearts Animation --- */
-        .heart-container {
+        /* Dreamy Gradient Orbs Background */
+        .gradient-orbs {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
+            z-index: 0;
             overflow: hidden;
-            z-index: -1; /* Puts it behind all content */
         }
-        
-        .heart {
+
+        .orb {
             position: absolute;
-            font-size: 1.5rem;
-            color: rgba(192, 57, 43, 0.3); /* Soft red hearts */
-            animation: fall 10s linear infinite;
-        }
-        
-        @keyframes fall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0;
-            }
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: orbFloat 20s infinite ease-in-out;
         }
 
-        /* NEW: Keyframes for the button pulse */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--rose-soft), transparent 70%);
+            top: -10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--lavender), transparent 70%);
+            top: 30%;
+            right: -5%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, var(--peach), transparent 70%);
+            bottom: 20%;
+            left: 10%;
+            animation-delay: -10s;
+        }
+
+        .orb-4 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--blush), transparent 70%);
+            bottom: -10%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        .orb-5 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--champagne), transparent 70%);
+            top: 50%;
+            left: 40%;
+            animation-delay: -7s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
             }
+
+            25% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+
             50% {
-                transform: scale(1.03);
-                box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
+                transform: translate(-20px, 20px) scale(0.95);
             }
+
+            75% {
+                transform: translate(20px, 10px) scale(1.05);
+            }
+        }
+
+        /* Floating Petals */
+        .floating-petals {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .petal {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.5;
+            animation: petalFall 15s infinite linear;
+        }
+
+        @keyframes petalFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: sparkle 3s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Glass Card Style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            box-shadow:
+                0 8px 32px rgba(255, 182, 193, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        .glass-card-dark {
+            background: rgba(255, 248, 240, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            box-shadow:
+                0 8px 32px rgba(255, 182, 193, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #FF69B4 0%, #FF1493 50%, #FFB6C1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-rose {
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        /* Heart Beat */
+        .heart-beat {
+            animation: heartBeat 1.5s infinite ease-in-out;
+        }
+
+        @keyframes heartBeat {
+
+            0%,
             100% {
                 transform: scale(1);
-                box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+            }
+
+            14% {
+                transform: scale(1.15);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.15);
+            }
+
+            70% {
+                transform: scale(1);
             }
         }
 
-        /* --- Page Animation Setup --- */
-        /* 'page' is the base class for all content sections */
-        .page {
-            display: none; /* All pages are hidden by default */
-        }
-        
-        /* 'active' is the class we add with JavaScript to show a page */
-        .page.active {
-            display: block;
-            /* Simple, elegant fade-in animation */
-            animation: fadeIn 0.8s ease-out;
+        /* Soft Float */
+        .soft-float {
+            animation: softFloat 6s infinite ease-in-out;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
+        @keyframes softFloat {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
-        /* --- The Header (Homepage) --- */
-        .header {
-            text-align: center;
-            margin: 30px auto;
+        /* Bounce Soft */
+        .bounce-soft {
+            animation: bounceSoft 2s infinite ease-in-out;
         }
 
-        .header h1 {
-            /* The beautiful, romantic script font */
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: #c0392b; /* A deep, wax-seal red */
-            margin: 0;
+        @keyframes bounceSoft {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
-        .header p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-top: 5px;
-        }
-        
-        /* --- NEW: Countdown Timer Style --- */
-        #countdown {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #c0392b;
-            margin-top: 20px;
-            font-family: 'Montserrat', sans-serif;
+        /* Cute Floating Elements */
+        .cute-float-element {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.8;
+            animation: cuteFloat 10s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(255, 182, 193, 0.3));
         }
 
-        /* --- The Envelope Grid (Homepage) --- */
-        .letter-grid {
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-        
-        .letter-grid.active {
-            display: grid;
+        @keyframes cuteFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(3deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-2deg);
+            }
+
+            75% {
+                transform: translateY(-25px) rotate(2deg);
+            }
         }
 
-        /* --- The "Envelope" Card Style --- */
-        .letter-envelope {
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 30px;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* Section Divider */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 182, 193, 0.5),
+                    rgba(255, 215, 0, 0.5),
+                    rgba(255, 182, 193, 0.5),
+                    transparent);
+            margin: 5rem auto;
+            width: 50%;
         }
 
-        .letter-envelope.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .letter-envelope:hover {
-            transform: scale(1.05) rotate(-1.5deg);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
         }
 
-        .letter-envelope span {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-        
-        .letter-envelope::before {
-            content: '💌';
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        /* --- The "Sheet of Paper" Style (For Letters) --- */
-        .letter-paper {
-            background: #ffffff;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 40px 50px;
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--rose-soft), var(--lavender));
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            line-height: 1.8;
-            font-family: 'Merriweather', serif;
-            font-size: 1.1rem;
         }
 
-        .letter-paper h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            color: #c0392b;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        
-        .letter-paper img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        /* Love Letter Cards */
+        .letter-card {
+            perspective: 1000px;
+            height: 400px;
         }
 
-        /* --- The Back Button --- */
-        .back-button {
-            display: inline-block;
-            margin-top: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            text-decoration: none;
-            color: #c0392b;
+        .letter-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+
+        .letter-card:hover .letter-inner {
+            transform: rotateY(180deg);
+        }
+
+        .letter-front,
+        .letter-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            border-radius: 24px;
+        }
+
+        .letter-back {
+            transform: rotateY(180deg);
+            background: rgba(255, 248, 240, 0.95);
+        }
+
+        /* Playlist Cards */
+        .playlist-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.4);
+        }
+
+        /* Play Button */
+        .play-btn {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--rose-soft), var(--rose-deep));
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+        }
+
+        /* Cute Buttons */
+        .cute-btn {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 105, 180, 0.2));
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            color: #5a4a4a;
             transition: all 0.3s ease;
         }
 
-        .back-button:hover {
-            transform: translateX(-5px);
+        .cute-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.5), rgba(255, 105, 180, 0.3));
+            border-color: var(--rose-deep);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
         }
-        
-        /* --- NEW: Enhanced Responsiveness --- */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -3px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--rose-soft), var(--rose-deep));
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Music Visualizer */
+        .music-bar {
+            width: 4px;
+            background: linear-gradient(180deg, var(--rose-soft), var(--rose-deep));
+            border-radius: 2px;
+            animation: musicBar 1s infinite ease-in-out;
+        }
+
+        .music-bar:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .music-bar:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .music-bar:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .music-bar:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes musicBar {
+
+            0%,
+            100% {
+                height: 10px;
             }
-            
-            .header h1, #welcome-screen h1 {
-                /* NEW: Adjusted font size for mobile */
-                font-size: 3rem;
-            }
-            
-            #countdown {
-                font-size: 1.1rem;
-            }
-            
-            .letter-paper {
-                padding: 30px 25px;
-                margin: 20px auto;
-            }
-            
-            .letter-envelope span {
-                font-size: 1.3rem;
-            }
-            
-            #enter-button {
-                font-size: 1rem;
-                padding: 12px 25px;
+
+            50% {
+                height: 30px;
             }
         }
-        
+
+        /* Map Line Animation */
+        .map-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .map-line.animate {
+            animation: dash 3s linear forwards;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Pulse Glow */
+        .pulse-glow {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(255, 182, 193, 0.7);
+            }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            background: rgba(255, 248, 240, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Countdown Box */
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 248, 240, 0.9));
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+
+        /* Star Field */
+        .star {
+            position: absolute;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* Cute Image Container */
+        .cute-image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cute-image-container::after {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.3), transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
     </style>
 </head>
+
 <body>
-
-    <!-- 
-      =================================================
-      NEW: WELCOME SCREEN (Visible on load)
-      =================================================
-    -->
-    <div id="welcome-screen">
-        <h1>For My Dearest Bhallu 💖</h1>
-        <!-- NEW: Added a sweet subtitle -->
-        <p>I made this just for you.</p>
-        <div id="enter-button">Click to open your gift</div>
+    <!-- Dreamy Gradient Orbs Background -->
+    <div class="gradient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
     </div>
-    
-    <!-- 
-      =================================================
-      NEW: FALLING HEARTS CONTAINER
-      =================================================
-    -->
-    <div class="heart-container"></div>
-    
-    <!-- 
-      =================================================
-      NEW: MUSIC PLAYER (Hidden)
-      =================================================
-      *** HOW TO ADD MUSIC ***
-      1. Add your song file (e.g., 'our-song.mp3') to the same folder as this file.
-      2. Uncomment the <audio> tag below and change the src.
-      3. Uncomment the 'document.getElementById...' line in the JavaScript.
-    -->
-    <!-- <audio id="our-song" src="our-song.mp3" loop></audio> -->
 
+    <!-- Floating Petals -->
+    <div class="floating-petals" id="floatingPetals"></div>
 
-    <!-- 
-      =================================================
-      HOMEPAGE CONTENT (Hidden by default)
-      =================================================
-    -->
-    <header class="header page" id="page-home-header">
-        <h1>For My Dearest Bhallu 💖</h1>
-        <p>A collection of letters, sealed with my love.</p>
-        
-        <!-- NEW: Countdown Timer -->
-        <div id="countdown"></div>
-    </header>
+    <!-- Cute Floating Elements -->
+    <img src="teddy_bear_cute.png" class="cute-float-element"
+        style="top: 10%; right: 5%; width: 100px; animation-delay: 0s;" alt="Teddy">
+    <img src="ice_cream_cute.png" class="cute-float-element"
+        style="top: 40%; left: 3%; width: 90px; animation-delay: 3s;" alt="Ice Cream">
+    <img src="chocolate_cute.png" class="cute-float-element"
+        style="top: 65%; right: 8%; width: 80px; animation-delay: 6s;" alt="Chocolate">
+    <img src="teddy_bear_cute.png" class="cute-float-element"
+        style="bottom: 25%; left: 5%; width: 70px; animation-delay: 2s; opacity: 0.6;" alt="Teddy">
+    <img src="ice_cream_cute.png" class="cute-float-element"
+        style="top: 20%; left: 8%; width: 60px; animation-delay: 5s; opacity: 0.6;" alt="Ice Cream">
 
-    <main class="letter-grid page" id="page-home-grid">
-        <!-- 
-          Each envelope is now a `div` with a `data-page` attribute.
-          This tells the JavaScript which "page" (section) to open.
-        -->
-        <div class="letter-envelope" data-page="miss-you">
-            <span>Open when...<br>you miss me</span>
+    <!-- 1. LANDING SECTION -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
+        <div class="relative">
+            <div class="mb-8 reveal-scale">
+                <i class="fas fa-heart text-6xl text-pink-400 heart-beat"></i>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-serif mb-6 gradient-text reveal">Hi {{HER_NAME}},</h1>
+            <p class="text-xl md:text-2xl text-gray-600 font-light mb-6 reveal" style="animation-delay: 0.2s">
+                No matter the distance... <span class="text-pink-500 font-cute font-semibold">this space is only
+                    ours.</span>
+            </p>
+            <div class="mt-8 reveal" style="animation-delay: 0.4s">
+                <p class="font-handwriting text-4xl text-amber-500 italic">— {{NICKNAME}}</p>
+            </div>
+            <div class="mt-12 flex justify-center gap-6 reveal" style="animation-delay: 0.6s">
+                <div class="cute-image-container soft-float">
+                    <img src="teddy_bear_cute.png" alt="Cute Teddy" class="w-28 h-28 object-contain drop-shadow-lg">
+                </div>
+            </div>
         </div>
 
-        <div class="letter-envelope" data-page="bad-day">
-            <span>Open when...<br>you've had a bad day</span>
+        <div class="absolute bottom-10 animate-bounce z-10">
+            <a href="#distance" class="text-pink-400 hover:text-pink-600 transition-colors duration-300">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
         </div>
+    </section>
 
-        <div class="letter-envelope" data-page="laugh">
-            <span>Open when...<br>you want to laugh</span>
+    <div class="section-divider"></div>
+
+    <!-- 2. DISTANCE AS ART -->
+    <section id="distance" class="min-h-screen py-24 px-6 flex flex-col items-center justify-center relative z-10">
+        <div class="max-w-5xl w-full">
+            <h2 class="text-3xl md:text-5xl font-serif text-center mb-4 reveal gradient-text-rose">
+                Distance is just a test
+            </h2>
+            <p class="text-center text-gray-500 mb-16 reveal font-cute text-lg">of how far love can travel.</p>
+
+            <div class="relative h-72 md:h-96 w-full mb-12 flex items-center justify-center reveal">
+                <svg class="w-full h-full" viewBox="0 0 800 400">
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                            <feMerge>
+                                <feMergeNode in="coloredBlur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="loveLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <path d="M150,200 Q400,80 650,150" fill="none" stroke="rgba(255,182,193,0.3)" stroke-width="3"
+                        stroke-dasharray="15,10" />
+                    <path id="connectionLine" d="M150,200 Q400,80 650,150" fill="none" stroke="url(#loveLine)"
+                        stroke-width="4" class="map-line" filter="url(#glow)" stroke-linecap="round" />
+
+                    <circle cx="150" cy="200" r="14" fill="#FF69B4" class="pulse-glow" filter="url(#glow)" />
+                    <circle cx="150" cy="200" r="7" fill="white" />
+                    <text x="120" y="245" fill="#5a4a4a" class="text-sm font-cute" text-anchor="middle"
+                        font-weight="600">{{MY_LOCATION}}</text>
+
+                    <circle cx="650" cy="150" r="14" fill="#FFD700" class="pulse-glow" filter="url(#glow)" />
+                    <circle cx="650" cy="150" r="7" fill="white" />
+                    <text x="620" y="195" fill="#5a4a4a" class="text-sm font-cute" text-anchor="middle"
+                        font-weight="600">{{HER_LOCATION}}</text>
+
+                    <g transform="translate(400, 115)">
+                        <path d="M0,-12 C-12,-24 -24,-12 -24,0 C-24,18 0,30 0,30 C0,30 24,18 24,0 C24,-12 12,-24 0,-12"
+                            fill="#FF69B4" opacity="0.9" class="heart-beat">
+                        </path>
+                    </g>
+                </svg>
+
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-card px-8 py-4 pulse-glow">
+                    <span id="km-counter" class="text-3xl font-bold gradient-text-rose">...</span>
+                    <span class="text-sm text-gray-500 ml-2 font-cute">KM APART</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 text-center reveal-left hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <i class="fas fa-calendar-heart text-4xl text-pink-400"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-sm uppercase tracking-widest mb-2 font-cute">Days Together</h3>
+                    <p id="days-counter" class="text-6xl font-serif gradient-text-rose">0</p>
+                    <p class="mt-4 text-xs text-gray-400 font-cute">Since {{IMPORTANT_DATES}}</p>
+                    <div class="mt-4 flex justify-center">
+                        <img src="chocolate_cute.png" alt="Chocolate"
+                            class="w-16 h-16 object-contain opacity-70 soft-float">
+                    </div>
+                </div>
+                <div class="glass-card p-8 text-center reveal-right hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <i class="fas fa-infinity text-4xl text-amber-400"></i>
+                    </div>
+                    <h3 class="text-gray-500 text-sm uppercase tracking-widest mb-2 font-cute">Moments Created</h3>
+                    <p class="text-6xl font-serif gradient-text-gold">∞</p>
+                    <p class="mt-4 text-xs text-gray-400 font-cute">And many more to come</p>
+                    <div class="mt-4 flex justify-center">
+                        <img src="ice_cream_cute.png" alt="Ice Cream"
+                            class="w-16 h-16 object-contain opacity-70 soft-float" style="animation-delay: 1s">
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="letter-envelope" data-page="happy">
-            <span>Open when...<br>you're feeling happy</span>
+    <div class="section-divider"></div>
+
+    <!-- 3. TIME CAPSULE -->
+    <section class="min-h-screen py-24 px-6 relative z-10">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4 reveal">
+                    <img src="teddy_bear_cute.png" alt="Teddy" class="w-24 h-24 object-contain soft-float">
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif reveal gradient-text">The Chapters of Us</h2>
+                <p class="text-gray-500 mt-4 font-cute reveal">Our love story, one chapter at a time</p>
+            </div>
+
+            <div class="space-y-12 relative">
+                <div
+                    class="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-300 via-amber-200 to-pink-300">
+                </div>
+
+                <div class="timeline-item relative pl-14 reveal-left">
+                    <div class="timeline-dot">
+                        <i class="fas fa-heart text-white text-xs"></i>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="text-xl font-bold mb-2 gradient-text-rose font-cute">The Beginning</h4>
+                        <p class="text-gray-500 italic mb-4">{{SPECIAL_MEMORIES}}</p>
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            I remember the exact feeling when we first spoke. It was like finding a piece of myself I
+                            didn't know was missing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-14 reveal-right">
+                    <div class="timeline-dot" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                        <i class="fas fa-star text-white text-xs"></i>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="text-xl font-bold mb-2 gradient-text-gold font-cute">The Miles Didn't Matter</h4>
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            When we realized that the distance was just geographical. Our hearts were already occupying
+                            the same space. Every late-night call confirmed what I already knew.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-14 reveal-left">
+                    <div class="timeline-dot" style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
+                        <i class="fas fa-home text-white text-xs"></i>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="text-xl font-bold mb-2 gradient-text-rose font-cute">Today & Beyond</h4>
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            We're building a world that only we understand. Every "good morning" is a promise, and every
+                            "goodnight" is a countdown to when we won't have to say it over a phone.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-4">
+                            <button onclick="showModal('missMe')"
+                                class="cute-btn px-6 py-3 rounded-xl text-sm font-cute">
+                                <i class="fas fa-envelope-heart mr-2 text-pink-400"></i>Open when you miss me
+                            </button>
+                            <button onclick="showModal('feelAlone')"
+                                class="cute-btn px-6 py-3 rounded-xl text-sm font-cute">
+                                <i class="fas fa-hand-holding-heart mr-2 text-pink-400"></i>Open when you feel alone
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="letter-envelope" data-page="anniversary">
-            <span>Open when...<br>it's our anniversary</span>
+    <div class="section-divider"></div>
+
+    <!-- 4. YOUTUBE MUSIC PLAYLIST SECTION -->
+    <section class="min-h-screen py-24 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex justify-center items-center gap-4 mb-6 reveal">
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                    <div class="music-bar"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif reveal gradient-text">Our Love Playlist</h2>
+                <p class="text-gray-500 mt-4 font-cute reveal">Songs that remind me of you</p>
+                <div class="mt-6 reveal flex justify-center gap-4">
+                    <img src="chocolate_cute.png" alt="Chocolate" class="w-16 h-16 object-contain soft-float">
+                    <img src="ice_cream_cute.png" alt="Ice Cream" class="w-16 h-16 object-contain soft-float"
+                        style="animation-delay: 0.5s">
+                </div>
+            </div>
+
+            <!-- Featured Song -->
+            <div class="glass-card rounded-3xl p-8 mb-12 reveal">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3">
+                        <div class="relative aspect-square rounded-2xl overflow-hidden shadow-lg"
+                            style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-music text-7xl text-white/80"></i>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <button
+                                    class="play-btn w-20 h-20 rounded-full flex items-center justify-center shadow-lg"
+                                    onclick="playVideo('dQw4w9WgXcQ')">
+                                    <i class="fas fa-play text-3xl text-white ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 text-center md:text-left">
+                        <span class="text-pink-500 text-sm font-cute uppercase tracking-wider">Now Playing</span>
+                        <h3 class="text-3xl font-serif mt-2 mb-2 gradient-text-rose">Our Special Song</h3>
+                        <p class="text-gray-500 mb-6 font-cute">This song captures everything I feel when I think of
+                            you.</p>
+                        <div class="flex items-center justify-center md:justify-start gap-4">
+                            <button onclick="playVideo('dQw4w9WgXcQ')"
+                                class="play-btn px-8 py-4 rounded-full text-white font-cute shadow-lg">
+                                <i class="fas fa-play mr-2"></i>Play on YouTube
+                            </button>
+                            <button
+                                class="glass-card w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition">
+                                <i class="fas fa-heart text-pink-400 text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playlist Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="playlist-card glass-card p-6 reveal" onclick="playVideo('3JZ_D3ELwOQ')">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-cute font-semibold text-gray-700">Perfect</h4>
+                            <p class="text-sm text-gray-400">Ed Sheeran</p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                            <i class="fas fa-play text-white text-sm ml-0.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 italic">"I found a love for me"</p>
+                </div>
+
+                <div class="playlist-card glass-card p-6 reveal" style="animation-delay: 0.1s"
+                    onclick="playVideo('450p7goxZqg')">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-cute font-semibold text-gray-700">All of Me</h4>
+                            <p class="text-sm text-gray-400">John Legend</p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                            <i class="fas fa-play text-white text-sm ml-0.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 italic">"Give your all to me"</p>
+                </div>
+
+                <div class="playlist-card glass-card p-6 reveal" style="animation-delay: 0.2s"
+                    onclick="playVideo('rbv4N3sR5ac')">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-cute font-semibold text-gray-700">A Thousand Years</h4>
+                            <p class="text-sm text-gray-400">Christina Perri</p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
+                            <i class="fas fa-play text-white text-sm ml-0.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 italic">"I have loved you for a thousand years"</p>
+                </div>
+
+                <div class="playlist-card glass-card p-6 reveal" style="animation-delay: 0.3s"
+                    onclick="playVideo('2Vv-BfVoq4g')">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-cute font-semibold text-gray-700">Photograph</h4>
+                            <p class="text-sm text-gray-400">Ed Sheeran</p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                            <i class="fas fa-play text-white text-sm ml-0.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 italic">"Loving can heal, loving can mend your soul"</p>
+                </div>
+
+                <div class="playlist-card glass-card p-6 reveal" style="animation-delay: 0.4s"
+                    onclick="playVideo('RgKAFK5djSk')">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FF69B4, #FF1493);">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-cute font-semibold text-gray-700">See You Again</h4>
+                            <p class="text-sm text-gray-400">Wiz Khalifa ft. Charlie Puth</p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FF69B4, #FF1493);">
+                            <i class="fas fa-play text-white text-sm ml-0.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 italic">"It's been a long day without you"</p>
+                </div>
+
+                <div class="playlist-card glass-card p-6 reveal" style="animation-delay: 0.5s"
+                    onclick="playVideo('pRpeEdMmmQ0')">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-cute font-semibold text-gray-700">Shape of You</h4>
+                            <p class="text-sm text-gray-400">Ed Sheeran</p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
+                            <i class="fas fa-play text-white text-sm ml-0.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 italic">"I'm in love with your body"</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="letter-envelope" data-page="bored">
-            <span>Open when...<br>you're feeling bored</span>
+    <div class="section-divider"></div>
+
+    <!-- 5. LOVE LETTERS -->
+    <section class="min-h-screen py-24 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex justify-center gap-6 mb-6 reveal">
+                    <img src="teddy_bear_cute.png" alt="Teddy" class="w-20 h-20 object-contain bounce-soft">
+                    <img src="chocolate_cute.png" alt="Chocolate" class="w-20 h-20 object-contain bounce-soft"
+                        style="animation-delay: 0.5s">
+                    <img src="ice_cream_cute.png" alt="Ice Cream" class="w-20 h-20 object-contain bounce-soft"
+                        style="animation-delay: 1s">
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif reveal gradient-text-rose">A Few Things I Never Say Enough
+                </h2>
+                <p class="text-gray-500 mt-4 font-cute reveal">Hover over the cards to reveal my heart</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="letter-card reveal">
+                    <div class="letter-inner">
+                        <div class="letter-front glass-card flex items-center">
+                            <div class="text-center">
+                                <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+                                    style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                                    <i class="fas fa-heart text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold gradient-text-rose font-cute">Why I Love You</h3>
+                                <p class="text-sm text-gray-400 mt-4 font-cute">Hover to read the truth...</p>
+                                <div class="mt-6">
+                                    <img src="teddy_bear_cute.png" alt="Teddy"
+                                        class="w-16 h-16 mx-auto opacity-50 soft-float">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="letter-back border-2 border-pink-300">
+                            <p class="font-handwriting text-2xl leading-relaxed text-pink-600">
+                                I love the way your mind works, the way you laugh when you're tired, and how you make me
+                                feel like the best version of myself even from thousands of miles away.
+                            </p>
+                            <div class="mt-6 text-center">
+                                <i class="fas fa-heart text-pink-400 text-2xl heart-beat"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="letter-card reveal" style="animation-delay: 0.2s">
+                    <div class="letter-inner">
+                        <div class="letter-front glass-card flex items-center">
+                            <div class="text-center">
+                                <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+                                    style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                                    <i class="fas fa-star text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold gradient-text-gold font-cute">What You Mean To Me</h3>
+                                <p class="text-sm text-gray-400 mt-4 font-cute">Hover to reveal...</p>
+                                <div class="mt-6">
+                                    <img src="chocolate_cute.png" alt="Chocolate"
+                                        class="w-16 h-16 mx-auto opacity-50 soft-float">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="letter-back border-2 border-amber-300">
+                            <p class="font-handwriting text-2xl leading-relaxed text-amber-600">
+                                You are my anchor. In a world that's often loud and chaotic, you are the quiet peace I
+                                come home to every single day.
+                            </p>
+                            <div class="mt-6 text-center">
+                                <i class="fas fa-star text-amber-400 text-2xl heart-beat"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="letter-card reveal" style="animation-delay: 0.4s">
+                    <div class="letter-inner">
+                        <div class="letter-front glass-card flex items-center">
+                            <div class="text-center">
+                                <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+                                    style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                                    <i class="fas fa-feather text-white text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold gradient-text font-cute">My Promise</h3>
+                                <p class="text-sm text-gray-400 mt-4 font-cute">Hover to see my word...</p>
+                                <div class="mt-6">
+                                    <img src="ice_cream_cute.png" alt="Ice Cream"
+                                        class="w-16 h-16 mx-auto opacity-50 soft-float">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="letter-back border-2 border-purple-300">
+                            <p class="font-handwriting text-2xl leading-relaxed text-purple-600">
+                                I promise to always be your safe place. To listen, to hold space for your dreams, and to
+                                never stop showing you how much you are valued.
+                            </p>
+                            <div class="mt-6 text-center">
+                                <i class="fas fa-feather text-purple-400 text-2xl heart-beat"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-    </main>
-
-    <!-- 
-      =================================================
-      LETTER PAGES (Hidden by default)
-      =================================================
-    -->
-
-    <!-- 
-      PAGE 1: MISS YOU
-      All letters follow this template.
-    -->
-    <section class="letter-paper page" id="page-miss-you">
-        
-        <!-- ===== START EDITING HERE ===== -->
-
-        <h1>My Dearest Vanshu,</h1>
-        
-        <p>
-            You opened this letter because you're missing me, and that makes me
-            both happy and sad. Happy because it means you're thinking of me, 
-            and sad because I wish I was right there with you, so you wouldn't
-            have to miss me at all.
-        </p>
-
-        <!-- 
-          *** HOW TO ADD YOUR IMAGE ***
-          1. Create a folder named 'images' in the same directory as this file.
-          2. Add your photo (e.g., 'photo-of-us.jpg') to that 'images' folder.
-          3. Change the 'src' below from 'https://placehold.co/...' to 'images/photo-of-us.jpg'
-        -->
-        <img src="https://placehold.co/600x400/fdf2f2/c0392b?text=Add+Your+Favorite+Photo" alt="A special memory of us">
-
-        <p>
-            Being far away is tough, but I want you to know something. 
-            Anytime you miss me, just close your eyes and remember... 
-            <strong>(ADD A BEAUTIFUL SHARED MEMORY HERE)</strong>.
-        </p>
-        
-        <p>
-            I'm counting down the seconds until I see you again.
-        </p>
-        
-        <p>
-            All my love,<br>
-            Ritesh
-        </p>
-
-        <!-- ===== STOP EDITING HERE ===== -->
-
-        <!-- This button takes her back to the homepage -->
-        <div class="back-button" data-page="home">← Back to all letters</div>
     </section>
 
-    <!-- 
-      PAGE 2: BAD DAY
-    -->
-    <section class="letter-paper page" id="page-bad-day">
-        
-        <!-- ===== START EDITING HERE ===== -->
+    <div class="section-divider"></div>
 
-        <h1>For my love,</h1>
-        
-        <p>
-            I'm so sorry you're having a bad day. If I were there, 
-            I'd give you the biggest hug right now and not let go.
-        </p>
-        <p>
-            Since I can't be, I want you to do three things for me:
-        </p>
-        <ol>
-            <li>Take a deep breath. In and out. Go on, do it.</li>
-            <li>Close your eyes and remember <strong>(ADD A FUNNY OR SWEET MEMORY)</strong>.</li>
-            <li>Smile. Even if it's a small one.</li>
-        </ol>
-        <p>
-            Whatever is wrong, it will pass. You are the strongest, most resilient
-            person I know. This day is no match for you.
-        </p>
+    <!-- 6. PARALLEL UNIVERSE -->
+    <section class="relative min-h-screen py-24 overflow-hidden flex items-center justify-center z-10">
+        <div id="star-field" class="absolute inset-0 pointer-events-none"></div>
 
-        <!-- 
-          *** HOW TO ADD A FUNNY GIF ***
-          1. Find a GIF on Giphy (https://giphy.com/).
-          2. Click "Copy Link" and copy the "GIF Link" (ends in .gif).
-          3. Change the 'src' below to that link.
-        -->
-        <img src="https://placehold.co/600x338/fdf2f2/c0392b?text=Add+A+Cute+GIF+Here" alt="A cute or funny GIF to make her smile">
+        <div class="z-10 text-center max-w-5xl px-6">
+            <div class="mb-12 reveal">
+                <img src="hearts_decoration.png" alt="Hearts" class="w-32 h-32 mx-auto opacity-70"
+                    style="animation: softFloat 8s infinite ease-in-out;">
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif mb-4 reveal gradient-text">Our Parallel Universe</h2>
+            <p class="text-gray-500 mb-16 font-cute reveal">Where our souls meet beyond distance</p>
 
-        <p>
-            Things will be better tomorrow. I love you so much.
-        </p>
-
-        <p>
-            Yours,<br>
-            Ritesh
-        </p>
-
-        <!-- ===== STOP EDITING HERE ===== -->
-
-        <div class="back-button" data-page="home">← Back to all letters</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="reveal">
+                    <div class="w-36 h-36 rounded-full glass-card flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-500"
+                        style="box-shadow: 0 0 40px rgba(135, 206, 235, 0.3);">
+                        <i class="fas fa-phone-alt text-3xl" style="color: #87CEEB;"></i>
+                    </div>
+                    <h4 class="text-xl font-bold font-cute gradient-text">First Call Galaxy</h4>
+                    <p class="text-sm text-gray-400 mt-2 italic font-cute">Where 6 hours felt like 6 minutes.</p>
+                </div>
+                <div class="reveal" style="animation-delay: 0.2s">
+                    <div class="w-44 h-44 rounded-full glass-card flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-500"
+                        style="box-shadow: 0 0 50px rgba(218, 112, 214, 0.3);">
+                        <i class="fas fa-moon text-4xl" style="color: #DA70D6;"></i>
+                    </div>
+                    <h4 class="text-xl font-bold font-cute gradient-text-rose">Late Night Planet</h4>
+                    <p class="text-sm text-gray-400 mt-2 italic font-cute">Whispers in the dark that built our
+                        foundation.</p>
+                </div>
+                <div class="reveal" style="animation-delay: 0.4s">
+                    <div class="w-36 h-36 rounded-full glass-card flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-500"
+                        style="box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);">
+                        <i class="fas fa-home text-3xl" style="color: #FFD700;"></i>
+                    </div>
+                    <h4 class="text-xl font-bold font-cute gradient-text-gold">Future Home Star</h4>
+                    <p class="text-sm text-gray-400 mt-2 italic font-cute">A place that isn't on a map yet, but exists
+                        in our hearts.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 
-      PAGE 3: LAUGH
-    -->
-    <section class="letter-paper page" id="page-laugh">
-        
-        <!-- ===== START EDITING HERE ===== -->
+    <div class="section-divider"></div>
 
-        <h1>You want to laugh?</h1>
-        
-        <p>
-            Well, you're in luck. Do you remember that one time when...
-            <strong>(ADD YOUR FUNNIEST SHARED STORY OR INSIDE JOKE HERE)</strong>.
-        </p>
-        <p>
-            I still laugh just thinking about it.
-        </p>
-
-        <!-- 
-          *** HOW TO ADD A YOUTUBE VIDEO ***
-          1. Go to your private YouTube video.
-          2. Click "Share" -> "Embed".
-          3. Copy the ENTIRE '<iframe ...></iframe>' code.
-          4. Paste that code right below this comment, replacing the placeholder image.
-          (Make sure to set aspect-ratio in the style to look good)
-        -->
-        <img src="https://placehold.co/600x338/fdf2f2/c0392b?text=Add+A+Funny+Video+Embed+Here" alt="A funny video" style="aspect-ratio: 16/9; width: 100%; object-fit: cover;">
-        
-        <p>
-            Hope this made you smile!
-        </p>
-        
-        <p>
-            Love,<br>
-            Ritesh
-        </p>
-
-        <!-- ===== STOP EDITING HERE ===== -->
-
-        <div class="back-button" data-page="home">← Back to all letters</div>
+    <!-- 7. LOVE AS AN APP -->
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="chocolate_cute.png" alt="Chocolate" class="w-14 h-14 object-contain soft-float">
+                        <h2 class="text-4xl font-serif gradient-text">The Love Dashboard</h2>
+                    </div>
+                    <p class="text-gray-500 mb-8 leading-relaxed font-cute">
+                        If our relationship was an app, it would be the highest rated in the store. We're breaking
+                        records every day just by being us.
+                    </p>
+                    <div class="space-y-4">
+                        <div
+                            class="glass-card p-5 flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+                            <div class="p-4 rounded-xl" style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
+                                <i class="fas fa-check text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold font-cute text-gray-700">Long-Distance Champions</p>
+                                <p class="text-xs text-gray-400 font-cute">Achievement Unlocked</p>
+                            </div>
+                        </div>
+                        <div
+                            class="glass-card p-5 flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+                            <div class="p-4 rounded-xl" style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                                <i class="fas fa-smile text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold font-cute text-gray-700">1,000,000+ Smiles Caused</p>
+                                <p class="text-xs text-gray-400 font-cute">And counting daily</p>
+                            </div>
+                        </div>
+                        <div
+                            class="glass-card p-5 flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+                            <div class="p-4 rounded-xl" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                                <i class="fas fa-heart text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold font-cute text-gray-700">Infinite Love Points</p>
+                                <p class="text-xs text-gray-400 font-cute">Level: Soulmates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal" style="animation-delay: 0.3s">
+                    <div class="relative w-full max-w-xs mx-auto aspect-[9/19] rounded-[3rem] border-8 shadow-2xl overflow-hidden p-6"
+                        style="background: linear-gradient(180deg, #FFF8F0, #FFE4E1); border-color: #FFB6C1;">
+                        <div class="w-1/2 h-6 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl"
+                            style="background: #FFB6C1;"></div>
+                        <div class="mt-12 space-y-4">
+                            <div class="glass-card p-4 rounded-xl text-xs border-l-4 animate-pulse"
+                                style="border-color: #FF69B4;">
+                                <p class="font-bold font-cute text-gray-700">New Notification</p>
+                                <p class="opacity-70 font-cute text-gray-500">He's thinking about you right now</p>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-xs border-l-4" style="border-color: #87CEEB;">
+                                <p class="font-bold font-cute text-gray-700">Calendar Update</p>
+                                <p class="opacity-70 font-cute text-gray-500">One day closer to seeing you.</p>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-xs border-l-4" style="border-color: #FFD700;">
+                                <p class="font-bold font-cute text-gray-700">Reminder</p>
+                                <p class="opacity-70 font-cute text-gray-500">You are the most beautiful person I know.
+                                </p>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-xs border-l-4" style="border-color: #DA70D6;">
+                                <p class="font-bold font-cute text-gray-700">Love Status</p>
+                                <p class="opacity-70 font-cute text-gray-500">Distance: Far | Hearts: Connected</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                                style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                                style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                                <i class="fas fa-video text-white"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-20 right-2">
+                            <img src="teddy_bear_cute.png" alt="Teddy" class="w-10 h-10 opacity-50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 
-      PAGE 4: HAPPY
-    -->
-    <section class="letter-paper page" id="page-happy">
-        
-        <!-- ===== START EDITING HERE ===== -->
-        <h1>You're happy!</h1>
-        <p>
-            And that makes ME the happiest person in the world.
-        </p>
-        <p>
-            I love seeing you happy. Your smile brightens up my entire world.
-            Whatever is making you feel so good right now, hold onto it. 
-            You deserve every bit of happiness.
-        </p>
-        <p>
-            Here's a song to keep the good vibes going.
-        </p>
-        <!-- 
-          *** HOW TO ADD A SPOTIFY PLAYLIST ***
-          1. Go to your Spotify playlist.
-          2. Click the "..." -> "Share" -> "Embed Playlist".
-          3. Copy the '<iframe ...></iframe>' code.
-          4. Paste that code right below this comment, replacing the placeholder.
-        -->
-        <img src="https://placehold.co/600x380/fdf2f2/c0392b?text=Add+A+Spotify+Playlist+Embed" alt="A Spotify playlist embed" style="width: 100%;">
+    <div class="section-divider"></div>
 
-        <p>
-            Keep smiling, my love.
-        </p>
-        <p>
-            Ritesh
-        </p>
-        <!-- ===== STOP EDITING HERE ===== -->
+    <!-- 8. HER DIGITAL SANCTUARY -->
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-8 reveal">
+                <img src="ice_cream_cute.png" alt="Ice Cream" class="w-24 h-24 mx-auto bounce-soft">
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif mb-4 reveal gradient-text-rose">Your Digital Sanctuary</h2>
+            <p class="text-gray-500 mb-12 reveal font-cute text-lg">How are you feeling right now, {{NICKNAME}}?</p>
 
-        <div class="back-button" data-page="home">← Back to all letters</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+                <button onclick="moodResponse('miss')"
+                    class="glass-card py-8 rounded-2xl hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                    <i class="fas fa-heart text-3xl mb-3 group-hover:scale-125 transition-transform"
+                        style="color: #FF69B4;"></i>
+                    <p class="text-sm font-cute text-gray-600">I miss you</p>
+                </button>
+                <button onclick="moodResponse('sad')"
+                    class="glass-card py-8 rounded-2xl hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                    <i class="fas fa-cloud-rain text-3xl mb-3 group-hover:scale-125 transition-transform"
+                        style="color: #87CEEB;"></i>
+                    <p class="text-sm font-cute text-gray-600">I'm sad</p>
+                </button>
+                <button onclick="moodResponse('anxious')"
+                    class="glass-card py-8 rounded-2xl hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                    <i class="fas fa-wind text-3xl mb-3 group-hover:scale-125 transition-transform"
+                        style="color: #FFD700;"></i>
+                    <p class="text-sm font-cute text-gray-600">I need comfort</p>
+                </button>
+                <button onclick="moodResponse('happy')"
+                    class="glass-card py-8 rounded-2xl hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                    <i class="fas fa-sun text-3xl mb-3 group-hover:scale-125 transition-transform"
+                        style="color: #FFA500;"></i>
+                    <p class="text-sm font-cute text-gray-600">I'm happy</p>
+                </button>
+            </div>
+
+            <div id="mood-box"
+                class="mt-12 glass-card p-8 rounded-3xl min-h-[150px] flex items-center justify-center hidden">
+                <p id="mood-text" class="text-xl font-handwriting italic" style="color: #FF69B4;"></p>
+            </div>
+        </div>
     </section>
 
-    <!-- 
-      ADD MORE PAGES HERE!
-      Just copy the whole <section> ... </section> block
-      and change the 'id' (e.g., id="page-anniversary") and the content.
-      Then, add a new <div class="letter-envelope" data-page="anniversary">...</div>
-      to the .letter-grid at the top.
-    -->
-    <section class="letter-paper page" id="page-anniversary">
-        <!-- ... Your content for 'anniversary' ... -->
-        <h1>Happy Anniversary, My Love</h1>
-        <p>...</p>
-        <div class="back-button" data-page="home">← Back to all letters</div>
+    <div class="section-divider"></div>
+
+    <!-- 9. COUNTDOWN & ENDING -->
+    <section class="py-24 px-6 mb-20 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-8 reveal">
+                <div class="flex justify-center gap-6">
+                    <img src="teddy_bear_cute.png" alt="Teddy" class="w-20 h-20 object-contain heart-beat">
+                    <img src="chocolate_cute.png" alt="Chocolate" class="w-20 h-20 object-contain heart-beat"
+                        style="animation-delay: 0.3s">
+                    <img src="ice_cream_cute.png" alt="Ice Cream" class="w-20 h-20 object-contain heart-beat"
+                        style="animation-delay: 0.6s">
+                </div>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-serif mb-8 reveal gradient-text">Until We're Together</h2>
+            <div id="countdown" class="grid grid-cols-4 gap-4 mb-16 reveal">
+                <div class="countdown-box p-6 rounded-2xl hover:scale-105 transition-transform">
+                    <p id="cd-days" class="text-4xl md:text-5xl font-bold gradient-text-rose">--</p>
+                    <p class="text-xs uppercase text-gray-400 font-cute mt-2">Days</p>
+                </div>
+                <div class="countdown-box p-6 rounded-2xl hover:scale-105 transition-transform">
+                    <p id="cd-hours" class="text-4xl md:text-5xl font-bold gradient-text">--</p>
+                    <p class="text-xs uppercase text-gray-400 font-cute mt-2">Hours</p>
+                </div>
+                <div class="countdown-box p-6 rounded-2xl hover:scale-105 transition-transform">
+                    <p id="cd-minutes" class="text-4xl md:text-5xl font-bold gradient-text-rose">--</p>
+                    <p class="text-xs uppercase text-gray-400 font-cute mt-2">Mins</p>
+                </div>
+                <div class="countdown-box p-6 rounded-2xl hover:scale-105 transition-transform">
+                    <p id="cd-seconds" class="text-4xl md:text-5xl font-bold gradient-text-gold">--</p>
+                    <p class="text-xs uppercase text-gray-400 font-cute mt-2">Secs</p>
+                </div>
+            </div>
+
+            <div class="max-w-2xl mx-auto text-left glass-card p-8 rounded-3xl mb-12 reveal">
+                <h3 class="text-xl font-serif mb-6 gradient-text-rose">The "When I See You" List:</h3>
+                <ul class="space-y-4 text-gray-600 font-cute">
+                    <li class="flex items-center gap-3 hover:translate-x-2 transition-transform">
+                        <i class="fas fa-heart" style="color: #FF69B4;"></i> A hug that lasts for a thousand miles.
+                    </li>
+                    <li class="flex items-center gap-3 hover:translate-x-2 transition-transform">
+                        <i class="fas fa-heart" style="color: #FF69B4;"></i> Watching the sunset without a screen
+                        between us.
+                    </li>
+                    <li class="flex items-center gap-3 hover:translate-x-2 transition-transform">
+                        <i class="fas fa-heart" style="color: #FF69B4;"></i> Cooking a meal and laughing in the same
+                        kitchen.
+                    </li>
+                    <li class="flex items-center gap-3 hover:translate-x-2 transition-transform">
+                        <i class="fas fa-heart" style="color: #FF69B4;"></i> Just existing in the same silence.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reveal">
+                <h1 class="text-4xl md:text-6xl font-serif mb-6 gradient-text-rose">I love you, {{HER_NAME}}.</h1>
+                <p class="text-gray-500 font-cute text-lg">Until then, this is my way of holding you.</p>
+                <div class="mt-8">
+                    <i class="fas fa-heart text-5xl heart-beat" style="color: #FF69B4;"></i>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="letter-paper page" id="page-bored">
-        <!-- ... Your content for 'bored' ... -->
-        <h1>Bored, are we?</h1>
-        <p>Here's a little quiz about us...</p>
-        <div class="back-button" data-page="home">← Back to all letters</div>
-    </section>
+    <!-- Modal for Letters -->
+    <div id="letterModal" class="fixed inset-0 z-50 flex items-center justify-center p-6 hidden"
+        style="background: rgba(255, 248, 240, 0.95); backdrop-filter: blur(10px);">
+        <div class="glass-card max-w-lg w-full p-10 rounded-3xl relative border-2 border-pink-200">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center hover:shadow-lg transition"
+                style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                <i class="fas fa-times text-white"></i>
+            </button>
+            <div class="text-center mb-6">
+                <img src="teddy_bear_cute.png" alt="Teddy" class="w-24 h-24 mx-auto soft-float">
+            </div>
+            <div id="modalContent" class="font-handwriting text-2xl leading-relaxed text-center"
+                style="color: #FF69B4;"></div>
+        </div>
+    </div>
 
+    <!-- YouTube Player Modal -->
+    <div id="youtubeModal" class="fixed inset-0 z-50 flex items-center justify-center p-6 hidden"
+        style="background: rgba(255, 248, 240, 0.95); backdrop-filter: blur(10px);">
+        <div class="glass-card max-w-4xl w-full rounded-3xl overflow-hidden relative border-2 border-pink-200">
+            <button onclick="closeYoutubeModal()"
+                class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full flex items-center justify-center hover:shadow-lg transition"
+                style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                <i class="fas fa-times text-white"></i>
+            </button>
+            <div class="aspect-video">
+                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
-    <!-- 
-      =================================================
-      JavaScript for Functionality
-      =================================================
-      This script handles the page navigation and animations.
-    -->
+    <!-- Music Toggle -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="toggleMusic()"
+            class="w-14 h-14 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 pulse-glow">
+            <i id="music-icon" class="fas fa-volume-mute text-xl" style="color: #FF69B4;"></i>
+        </button>
+    </div>
+
     <script>
-        // Wait for the page to be fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            const allPages = document.querySelectorAll('.page');
-            const allButtons = document.querySelectorAll('[data-page]');
-            const enterButton = document.getElementById('enter-button');
-            const welcomeScreen = document.getElementById('welcome-screen');
-            const heartContainer = document.querySelector('.heart-container');
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
 
-            // --- 1. Page Navigation Logic ---
-            function showPage(pageId) {
-                // Hide all pages
-                allPages.forEach(page => {
-                    page.classList.remove('active');
-                });
+        // Create Floating Petals
+        const floatingPetalsContainer = document.getElementById('floatingPetals');
+        const petalEmojis = ['', '', '✨', '', ''];
 
-                // Show the requested page(s)
-                if (pageId === 'home') {
-                    // Homepage is two parts: header and grid
-                    document.getElementById('page-home-header').classList.add('active');
-                    document.getElementById('page-home-grid').classList.add('active');
-                } else {
-                    const pageToShow = document.getElementById('page-' + pageId);
-                    if (pageToShow) {
-                        pageToShow.classList.add('active');
-                        // Scroll to the top of the new page
-                        window.scrollTo(0, 0);
+        for (let i = 0; i < 25; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.innerHTML = petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 12 + 12) + 's';
+            petal.style.animationDelay = Math.random() * 12 + 's';
+            petal.style.fontSize = (Math.random() * 12 + 15) + 'px';
+            floatingPetalsContainer.appendChild(petal);
+        }
+
+        // Star field for Cosmic section
+        const starField = document.getElementById('star-field');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = star.style.height = Math.random() * 3 + 2 + 'px';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starField.appendChild(star);
+        }
+
+        // GSAP Scroll Animations
+        gsap.utils.toArray('.reveal').forEach((elem, i) => {
+            gsap.fromTo(elem,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    delay: i * 0.05
+                }
+            );
+        });
+
+        gsap.utils.toArray('.reveal-left').forEach((elem) => {
+            gsap.fromTo(elem,
+                { opacity: 0, x: -60 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
                     }
                 }
-            }
+            );
+        });
 
-            // --- 2. "Enter" Button Logic ---
-            enterButton.addEventListener('click', () => {
-                // Fade out the welcome screen
-                welcomeScreen.style.opacity = '0';
-                setTimeout(() => {
-                    welcomeScreen.style.display = 'none';
-                }, 1000); // 1s fade
-
-                // Show the homepage
-                showPage('home');
-
-                // --- 3. Staggered Animation for Envelopes ---
-                const letters = document.querySelectorAll('.letter-envelope');
-                letters.forEach((letter, index) => {
-                    setTimeout(() => {
-                        letter.classList.add('visible');
-                    }, index * 150 + 500); // Start after 500ms
-                });
-                
-                // --- 4. (OPTIONAL) Play Music ---
-                // Uncomment the line below to play your song
-                // document.getElementById('our-song').play();
-            });
-
-            // --- 5. Add click listeners to all navigation buttons ---
-            allButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const pageId = button.dataset.page;
-                    showPage(pageId);
-                });
-            });
-            
-            // --- 6. Live Countdown Timer ---
-            function startCountdown() {
-                // *** SET YOUR TARGET DATE HERE ***
-                // Format: "Month Day, Year HH:MM:SS"
-                // Example: "Jan 1, 2026 00:00:00"
-                const targetDate = new Date("Feb 14, 2026 09:00:00").getTime();
-                
-                const countdownElement = document.getElementById('countdown');
-
-                const interval = setInterval(() => {
-                    const now = new Date().getTime();
-                    const distance = targetDate - now;
-
-                    // Calculate days, hours, minutes, seconds
-                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    // Display the result
-                    if (distance < 0) {
-                        clearInterval(interval);
-                        countdownElement.innerHTML = "The wait is over! ❤️";
-                    } else {
-                        countdownElement.innerHTML = `Counting down...<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
+        gsap.utils.toArray('.reveal-right').forEach((elem) => {
+            gsap.fromTo(elem,
+                { opacity: 0, x: 60 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
                     }
-                }, 1000);
-            }
-            
-            // --- 7. Create Falling Hearts ---
-            function createHearts() {
-                const heartCount = 15; // Number of hearts
-                for (let i = 0; i < heartCount; i++) {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart';
-                    heart.innerHTML = '💖';
-                    heart.style.left = `${Math.random() * 100}vw`;
-                    heart.style.animationDelay = `${Math.random() * 10}s`;
-                    heart.style.fontSize = `${Math.random() * 1 + 0.5}rem`; // Vary size
-                    heart.style.animationDuration = `${Math.random() * 5 + 5}s`; // Vary speed
-                    heartContainer.appendChild(heart);
                 }
+            );
+        });
+
+        gsap.utils.toArray('.reveal-scale').forEach((elem) => {
+            gsap.fromTo(elem,
+                { opacity: 0, scale: 0.7 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1.2,
+                    ease: 'elastic.out(1, 0.5)',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+
+        // Animate map line when in view
+        ScrollTrigger.create({
+            trigger: '#connectionLine',
+            start: 'top 80%',
+            onEnter: () => {
+                document.getElementById('connectionLine').classList.add('animate');
+            }
+        });
+
+        // Counters Animation
+        const animateCount = (id, target) => {
+            const elem = document.getElementById(id);
+            if (!elem) return;
+
+            gsap.to({ val: 0 }, {
+                val: target,
+                duration: 2.5,
+                ease: 'power2.out',
+                onUpdate: function () {
+                    elem.innerText = Math.floor(this.targets()[0].val).toLocaleString();
+                }
+            });
+        };
+
+        // Trigger counters when section is visible
+        ScrollTrigger.create({
+            trigger: '#km-counter',
+            start: 'top 80%',
+            onEnter: () => {
+                animateCount('km-counter', 5240);
+                animateCount('days-counter', 428);
+            }
+        });
+
+        // Mood Responses
+        const moodMessages = {
+            miss: "I miss you more than these pixels can say. Close your eyes, take a deep breath, and imagine I'm right there holding your hand. I'm always with you.",
+            sad: "It's okay to have heavy days. I wish I could be there to just sit with you in the quiet. You're so strong, but you don't have to be strong right now. I've got you.",
+            anxious: "Slow down, {{NICKNAME}}. Focus on my voice in your head. Everything is going to be okay. We are a team, and we can handle anything life throws at us.",
+            happy: "Your happiness is my favorite thing in the world! Seeing you glow makes every mile worth it. Keep that beautiful smile shining, it lights up my whole world."
+        };
+
+        function moodResponse(type) {
+            const box = document.getElementById('mood-box');
+            const text = document.getElementById('mood-text');
+            text.innerText = moodMessages[type];
+            box.classList.remove('hidden');
+
+            gsap.fromTo(box,
+                { opacity: 0, y: 20, scale: 0.95 },
+                { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }
+            );
+
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Modal Content
+        const letters = {
+            missMe: "Whenever the distance feels too heavy, remember why we started. This isn't forever, it's just 'for now'. I am counting down every second until I can finally see you. You are my home.",
+            feelAlone: "You are never alone. I am a phone call away, a thought away, and always in your heart. Look at the moon tonight—we're both looking at the same one. We are connected, always."
+        };
+
+        function showModal(type) {
+            document.getElementById('modalContent').innerText = letters[type];
+            const modal = document.getElementById('letterModal');
+            modal.classList.remove('hidden');
+
+            gsap.fromTo(modal.querySelector('.glass-card'),
+                { opacity: 0, scale: 0.8, y: 50 },
+                { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'back.out(1.7)' }
+            );
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('letterModal');
+            gsap.to(modal.querySelector('.glass-card'), {
+                opacity: 0,
+                scale: 0.8,
+                y: 50,
+                duration: 0.3,
+                onComplete: () => modal.classList.add('hidden')
+            });
+        }
+
+        // YouTube Player Functions
+        function playVideo(videoId) {
+            const modal = document.getElementById('youtubeModal');
+            const player = document.getElementById('youtubePlayer');
+            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.remove('hidden');
+
+            gsap.fromTo(modal.querySelector('.glass-card'),
+                { opacity: 0, scale: 0.9 },
+                { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' }
+            );
+        }
+
+        function closeYoutubeModal() {
+            const modal = document.getElementById('youtubeModal');
+            const player = document.getElementById('youtubePlayer');
+
+            gsap.to(modal.querySelector('.glass-card'), {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.3,
+                onComplete: () => {
+                    modal.classList.add('hidden');
+                    player.src = '';
+                }
+            });
+        }
+
+        // Countdown Timer
+        const targetDate = new Date("2025-12-25T00:00:00").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<p class='text-2xl gradient-text col-span-4 font-cute'>The day is here! I love you!</p>";
+                return;
             }
 
-            // Start the animations!
-            startCountdown();
-            createHearts();
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            document.getElementById('cd-days').innerText = days;
+            document.getElementById('cd-hours').innerText = hours;
+            document.getElementById('cd-minutes').innerText = minutes;
+            document.getElementById('cd-seconds').innerText = seconds;
+        }, 1000);
+
+        // Music Toggle
+        let musicPlaying = false;
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            musicPlaying = !musicPlaying;
+
+            if (musicPlaying) {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            } else {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            }
+        }
+
+        // Close modals on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeYoutubeModal();
+            }
+        });
+
+        // Close modals on background click
+        document.getElementById('letterModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeModal();
+        });
+        document.getElementById('youtubeModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeYoutubeModal();
         });
     </script>
-
 </body>
+
 </html>
