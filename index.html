@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>For You | Our Universe</title>
+    <title>For You Bcheee</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --cream: #FFF8F0;
@@ -34,14 +37,24 @@
             min-height: 100vh;
             background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 30%, var(--lavender) 60%, var(--blush) 90%, var(--cream) 100%);
             background-attachment: fixed;
+            /* background-image: url('&w=1170&q=80');
+            background-size: cover; */
             color: #5a4a4a;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .font-handwriting { font-family: 'Dancing Script', cursive; }
-        .font-cute { font-family: 'Quicksand', sans-serif; }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-handwriting {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-cute {
+            font-family: 'Quicksand', sans-serif;
+        }
 
         /* Optimized Gradient Orbs - Reduced count and simplified */
         .gradient-orbs {
@@ -91,18 +104,39 @@
         }
 
         @keyframes orbFloat1 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 20px); }
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, 20px);
+            }
         }
 
         @keyframes orbFloat2 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-25px, -15px); }
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-25px, -15px);
+            }
         }
 
         @keyframes orbFloat3 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(20px, -20px); }
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, -20px);
+            }
         }
 
         /* Reduced floating elements */
@@ -130,8 +164,15 @@
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
@@ -231,10 +272,23 @@
         }
 
         @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
         }
 
         /* Soft Float */
@@ -244,8 +298,15 @@
         }
 
         @keyframes softFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         /* Bounce Soft */
@@ -255,8 +316,15 @@
         }
 
         @keyframes bounceSoft {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
         /* Cute Floating Elements */
@@ -270,8 +338,15 @@
         }
 
         @keyframes cuteFloat {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
         }
 
         /* Section Divider */
@@ -283,15 +358,17 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { 
-            width: 6px; 
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-        ::-webkit-scrollbar-track { 
-            background: var(--cream); 
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
         }
-        ::-webkit-scrollbar-thumb { 
+
+        ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--rose-soft), var(--lavender));
-            border-radius: 10px; 
+            border-radius: 10px;
         }
 
         /* Love Letter Cards */
@@ -314,7 +391,8 @@
             transform: rotateY(180deg);
         }
 
-        .letter-front, .letter-back {
+        .letter-front,
+        .letter-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -421,14 +499,32 @@
             will-change: height;
         }
 
-        .music-bar:nth-child(2) { animation-delay: 0.15s; }
-        .music-bar:nth-child(3) { animation-delay: 0.3s; }
-        .music-bar:nth-child(4) { animation-delay: 0.45s; }
-        .music-bar:nth-child(5) { animation-delay: 0.6s; }
+        .music-bar:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .music-bar:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .music-bar:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        .music-bar:nth-child(5) {
+            animation-delay: 0.6s;
+        }
 
         @keyframes musicBar {
-            0%, 100% { height: 8px; }
-            50% { height: 24px; }
+
+            0%,
+            100% {
+                height: 8px;
+            }
+
+            50% {
+                height: 24px;
+            }
         }
 
         /* Map Line Animation */
@@ -442,7 +538,9 @@
         }
 
         @keyframes dash {
-            to { stroke-dashoffset: 0; }
+            to {
+                stroke-dashoffset: 0;
+            }
         }
 
         /* Pulse Glow */
@@ -452,8 +550,15 @@
         }
 
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(255, 182, 193, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(255, 182, 193, 0.5); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+            }
         }
 
         /* Modal Styles */
@@ -485,8 +590,15 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
 
         /* Cute Image Container */
@@ -497,10 +609,22 @@
 
         /* ========== MOBILE RESPONSIVE STYLES ========== */
         @media (max-width: 768px) {
+
             /* Reduce orb sizes on mobile */
-            .orb-1 { width: 250px; height: 250px; }
-            .orb-2 { width: 200px; height: 200px; }
-            .orb-3 { width: 180px; height: 180px; }
+            .orb-1 {
+                width: 250px;
+                height: 250px;
+            }
+
+            .orb-2 {
+                width: 200px;
+                height: 200px;
+            }
+
+            .orb-3 {
+                width: 180px;
+                height: 180px;
+            }
 
             /* Hide floating cute elements on mobile */
             .cute-float-element {
@@ -524,7 +648,9 @@
             }
 
             /* Stack grid items */
-            .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+            .grid-cols-2,
+            .grid-cols-3,
+            .grid-cols-4 {
                 grid-template-columns: 1fr !important;
             }
 
@@ -589,7 +715,8 @@
             }
 
             /* Touch-friendly tap targets */
-            button, .playlist-card {
+            button,
+            .playlist-card {
                 min-height: 44px;
             }
 
@@ -603,7 +730,7 @@
             }
 
             /* Modal full screen on mobile */
-            .modal-overlay > div {
+            .modal-overlay>div {
                 margin: 1rem;
                 max-height: 90vh;
                 overflow-y: auto;
@@ -616,25 +743,39 @@
                 grid-template-columns: repeat(2, 1fr) !important;
             }
 
-            .orb-1 { width: 300px; height: 300px; }
-            .orb-2 { width: 250px; height: 250px; }
+            .orb-1 {
+                width: 300px;
+                height: 300px;
+            }
+
+            .orb-2 {
+                width: 250px;
+                height: 250px;
+            }
         }
 
         /* Reduced motion preference */
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
 
-            .reveal, .reveal-left, .reveal-right, .reveal-scale {
+            .reveal,
+            .reveal-left,
+            .reveal-right,
+            .reveal-scale {
                 opacity: 1;
                 transform: none;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Gradient Orbs Background - Reduced to 3 for performance -->
     <div class="gradient-orbs">
@@ -647,9 +788,12 @@
     <div class="floating-hearts" id="floatingHearts"></div>
 
     <!-- Cute Floating Elements - Desktop only -->
-    <img src="teddy_bear_cute.png" class="cute-float-element hidden md:block" style="top: 10%; right: 5%; width: 80px; animation-delay: 0s;" alt="Teddy">
-    <img src="ice_cream_cute.png" class="cute-float-element hidden md:block" style="top: 45%; left: 3%; width: 70px; animation-delay: 4s;" alt="Ice Cream">
-    <img src="chocolate_cute.png" class="cute-float-element hidden md:block" style="top: 70%; right: 8%; width: 65px; animation-delay: 8s;" alt="Chocolate">
+    <img src="teddy_bear_cute.png" class="cute-float-element hidden md:block"
+        style="top: 10%; right: 5%; width: 80px; animation-delay: 0s;" alt="Teddy">
+    <img src="ice_cream_cute.png" class="cute-float-element hidden md:block"
+        style="top: 45%; left: 3%; width: 70px; animation-delay: 4s;" alt="Ice Cream">
+    <img src="chocolate_cute.png" class="cute-float-element hidden md:block"
+        style="top: 70%; right: 8%; width: 65px; animation-delay: 8s;" alt="Chocolate">
 
     <!-- 1. LANDING SECTION -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
@@ -657,20 +801,26 @@
             <div class="mb-6 reveal-scale">
                 <i class="fas fa-heart text-5xl md:text-6xl" style="color: #FF69B4;"></i>
             </div>
-            <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif mb-4 gradient-text reveal">Hi {{HER_NAME}},</h1>
-            <p class="text-lg md:text-xl lg:text-2xl text-gray-600 font-light mb-4 reveal" style="transition-delay: 0.1s">
-                No matter the distance... <span class="font-cute font-semibold" style="color: #FF69B4;">this space is only ours.</span>
+            <h1 class="text-4xl md:text-6xl lg:text-8xl font-serif mb-4 gradient-text reveal">OYEEE Bhalluuuu,</h1>
+            <p class="text-lg md:text-xl lg:text-2xl text-gray-600 font-light mb-4 reveal"
+                style="transition-delay: 0.1s">
+                No matter the distance... <span class="font-cute font-semibold" style="color: #FF69B4;">this space is
+                    only ours.
+                    <br>
+                    Happy Valentine's Day! to my pyarraa bhaluu!!.
+                </span>
             </p>
             <div class="mt-6 reveal" style="transition-delay: 0.2s">
-                <p class="font-handwriting text-3xl md:text-4xl italic" style="color: #FFA500;">— {{NICKNAME}}</p>
+                <p class="font-handwriting text-3xl md:text-4xl italic" style="color: #FFA500;">— Rishu</p>
             </div>
             <div class="mt-10 flex justify-center reveal" style="transition-delay: 0.3s">
                 <div class="cute-image-container soft-float">
-                    <img src="teddy_bear_cute.png" alt="Cute Teddy" class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-lg">
+                    <img src="teddy_bear_cute.png" alt="Cute Teddy"
+                        class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-lg">
                 </div>
             </div>
         </div>
-        
+
         <div class="absolute bottom-8 animate-bounce z-10">
             <a href="#distance" class="transition-colors duration-300" style="color: #FF69B4;">
                 <i class="fas fa-chevron-down text-2xl md:text-3xl"></i>
@@ -681,13 +831,15 @@
     <div class="section-divider"></div>
 
     <!-- 2. DISTANCE AS ART -->
-    <section id="distance" class="min-h-screen py-16 md:py-24 px-4 md:px-6 flex flex-col items-center justify-center relative z-10">
+    <section id="distance"
+        class="min-h-screen py-16 md:py-24 px-4 md:px-6 flex flex-col items-center justify-center relative z-10">
         <div class="max-w-5xl w-full">
             <h2 class="text-2xl md:text-4xl lg:text-5xl font-serif text-center mb-3 reveal gradient-text-rose">
                 Distance is just a test
             </h2>
-            <p class="text-center text-gray-500 mb-12 md:mb-16 reveal font-cute text-base md:text-lg">of how far love can travel.</p>
-            
+            <p class="text-center text-gray-500 mb-12 md:mb-16 reveal font-cute text-base md:text-lg">of how far love
+                can travel.</p>
+
             <div class="relative h-56 md:h-72 lg:h-96 w-full mb-10 flex items-center justify-center reveal">
                 <svg class="w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
                     <defs>
@@ -697,24 +849,30 @@
                             <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
                         </linearGradient>
                     </defs>
-                    
-                    <path d="M150,200 Q400,80 650,150" fill="none" stroke="rgba(255,182,193,0.3)" stroke-width="3" stroke-dasharray="15,10" />
-                    <path id="connectionLine" d="M150,200 Q400,80 650,150" fill="none" stroke="url(#loveLine)" stroke-width="3" class="map-line" stroke-linecap="round" />
-                    
+
+                    <path d="M150,200 Q400,80 650,150" fill="none" stroke="rgba(255,182,193,0.3)" stroke-width="3"
+                        stroke-dasharray="15,10" />
+                    <path id="connectionLine" d="M150,200 Q400,80 650,150" fill="none" stroke="url(#loveLine)"
+                        stroke-width="3" class="map-line" stroke-linecap="round" />
+
                     <circle cx="150" cy="200" r="12" fill="#FF69B4" class="pulse-glow" />
                     <circle cx="150" cy="200" r="6" fill="white" />
-                    <text x="120" y="240" fill="#5a4a4a" font-size="14" font-family="Quicksand" font-weight="600" text-anchor="middle">{{MY_LOCATION}}</text>
-                    
+                    <text x="120" y="240" fill="#5a4a4a" font-size="14" font-family="Quicksand" font-weight="600"
+                        text-anchor="middle">Chnadigarh</text>
+
                     <circle cx="650" cy="150" r="12" fill="#FFD700" class="pulse-glow" />
                     <circle cx="650" cy="150" r="6" fill="white" />
-                    <text x="620" y="190" fill="#5a4a4a" font-size="14" font-family="Quicksand" font-weight="600" text-anchor="middle">{{HER_LOCATION}}</text>
-                    
+                    <text x="620" y="190" fill="#5a4a4a" font-size="14" font-family="Quicksand" font-weight="600"
+                        text-anchor="middle">Dehradun</text>
+
                     <g transform="translate(400, 115)">
-                        <path d="M0,-10 C-10,-20 -20,-10 -20,0 C-20,15 0,25 0,25 C0,25 20,15 20,0 C20,-10 10,-20 0,-10" fill="#FF69B4" opacity="0.9" class="heart-beat" />
+                        <path d="M0,-10 C-10,-20 -20,-10 -20,0 C-20,15 0,25 0,25 C0,25 20,15 20,0 C20,-10 10,-20 0,-10"
+                            fill="#FF69B4" opacity="0.9" class="heart-beat" />
                     </g>
                 </svg>
-                
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-card px-6 py-3 pulse-glow">
+
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-card px-6 py-3 pulse-glow">
                     <span id="km-counter" class="text-2xl md:text-3xl font-bold gradient-text-rose">...</span>
                     <span class="text-xs md:text-sm text-gray-500 ml-2 font-cute">KM APART</span>
                 </div>
@@ -725,22 +883,45 @@
                     <div class="mb-4">
                         <i class="fas fa-calendar-heart text-3xl md:text-4xl" style="color: #FF69B4;"></i>
                     </div>
-                    <h3 class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mb-2 font-cute">Days Together</h3>
-                    <p id="days-counter" class="text-4xl md:text-6xl font-serif gradient-text-rose">0</p>
-                    <p class="mt-3 text-xs text-gray-400 font-cute">Since {{IMPORTANT_DATES}}</p>
+                    <h3 class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mb-2 font-cute">Time Together
+                    </h3>
+                    <div id="time-together" class="space-y-2">
+                        <div class="flex justify-center gap-2 md:gap-4 flex-wrap">
+                            <div class="text-center">
+                                <p id="tt-days" class="text-3xl md:text-5xl font-serif gradient-text-rose">0</p>
+                                <p class="text-xs text-gray-400 font-cute">Days</p>
+                            </div>
+                            <div class="text-center">
+                                <p id="tt-hours" class="text-3xl md:text-5xl font-serif gradient-text-rose">0</p>
+                                <p class="text-xs text-gray-400 font-cute">Hours</p>
+                            </div>
+                            <div class="text-center">
+                                <p id="tt-mins" class="text-3xl md:text-5xl font-serif gradient-text-rose">0</p>
+                                <p class="text-xs text-gray-400 font-cute">Mins</p>
+                            </div>
+                            <div class="text-center">
+                                <p id="tt-secs" class="text-3xl md:text-5xl font-serif gradient-text-rose">0</p>
+                                <p class="text-xs text-gray-400 font-cute">Secs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-xs text-gray-400 font-cute">Since 15 April, 2023</p>
                     <div class="mt-4 flex justify-center">
-                        <img src="chocolate_cute.png" alt="Chocolate" class="w-12 h-12 md:w-16 md:h-16 object-contain opacity-70">
+                        <img src="chocolate_cute.png" alt="Chocolate"
+                            class="w-12 h-12 md:w-16 md:h-16 object-contain opacity-70">
                     </div>
                 </div>
                 <div class="glass-card p-6 md:p-8 text-center reveal-right">
                     <div class="mb-4">
                         <i class="fas fa-infinity text-3xl md:text-4xl" style="color: #FFA500;"></i>
                     </div>
-                    <h3 class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mb-2 font-cute">Moments Created</h3>
+                    <h3 class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mb-2 font-cute">Moments
+                        Created</h3>
                     <p class="text-4xl md:text-6xl font-serif gradient-text-gold">∞</p>
                     <p class="mt-3 text-xs text-gray-400 font-cute">And many more to come</p>
                     <div class="mt-4 flex justify-center">
-                        <img src="ice_cream_cute.png" alt="Ice Cream" class="w-12 h-12 md:w-16 md:h-16 object-contain opacity-70">
+                        <img src="ice_cream_cute.png" alt="Ice Cream"
+                            class="w-12 h-12 md:w-16 md:h-16 object-contain opacity-70">
                     </div>
                 </div>
             </div>
@@ -757,9 +938,10 @@
                     <img src="teddy_bear_cute.png" alt="Teddy" class="w-16 h-16 md:w-24 md:h-24 object-contain">
                 </div>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif reveal gradient-text">The Chapters of Us</h2>
-                <p class="text-gray-500 mt-3 font-cute reveal text-sm md:text-base">Our love story, one chapter at a time</p>
+                <p class="text-gray-500 mt-3 font-cute reveal text-sm md:text-base">Our love story, one chapter at a
+                    time</p>
             </div>
-            
+
             <div class="space-y-8 md:space-y-12">
                 <!-- Event 1 -->
                 <div class="flex gap-4 md:gap-6 reveal-left">
@@ -771,9 +953,10 @@
                     </div>
                     <div class="glass-card p-5 md:p-6 flex-1">
                         <h4 class="text-lg md:text-xl font-bold mb-2 gradient-text-rose font-cute">The Beginning</h4>
-                        <p class="text-gray-500 italic mb-3 text-sm">{{SPECIAL_MEMORIES}}</p>
+                        <p class="text-gray-500 italic mb-3 text-sm">From FreeFire</p>
                         <p class="text-sm leading-relaxed text-gray-600">
-                            I remember the exact feeling when we first spoke. It was like finding a piece of myself I didn't know was missing.
+                            I remember the exact feeling when we first spoke. It was like finding a piece of myself I
+                            didn't know was missing.
                         </p>
                     </div>
                 </div>
@@ -787,9 +970,11 @@
                         <div class="timeline-line hidden last:hidden"></div>
                     </div>
                     <div class="glass-card p-5 md:p-6 flex-1">
-                        <h4 class="text-lg md:text-xl font-bold mb-2 gradient-text-gold font-cute">The Miles Didn't Matter</h4>
+                        <h4 class="text-lg md:text-xl font-bold mb-2 gradient-text-gold font-cute">The Miles Didn't
+                            Matter</h4>
                         <p class="text-sm leading-relaxed text-gray-600">
-                            When we realized that the distance was just geographical. Our hearts were already occupying the same space. Every late-night call confirmed what I already knew.
+                            When we realized that the distance was just geographical. Our hearts were already occupying
+                            the same space. Every late-night call confirmed what I already knew.
                         </p>
                     </div>
                 </div>
@@ -804,14 +989,18 @@
                     <div class="glass-card p-5 md:p-6 flex-1">
                         <h4 class="text-lg md:text-xl font-bold mb-2 gradient-text-rose font-cute">Today & Beyond</h4>
                         <p class="text-sm leading-relaxed text-gray-600">
-                            We're building a world that only we understand. Every "good morning" is a promise, and every "goodnight" is a countdown to when we won't have to say it over a phone.
+                            We're building a world that only we understand. Every "good morning" is a promise, and every
+                            "goodnight" is a countdown to when we won't have to say it over a phone.
                         </p>
                         <div class="mt-4 md:mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
-                            <button onclick="showModal('missMe')" class="cute-btn px-4 md:px-6 py-3 rounded-xl text-xs md:text-sm font-cute">
+                            <button onclick="showModal('missMe')"
+                                class="cute-btn px-4 md:px-6 py-3 rounded-xl text-xs md:text-sm font-cute">
                                 <i class="fas fa-envelope-heart mr-2" style="color: #FF69B4;"></i>Open when you miss me
                             </button>
-                            <button onclick="showModal('feelAlone')" class="cute-btn px-4 md:px-6 py-3 rounded-xl text-xs md:text-sm font-cute">
-                                <i class="fas fa-hand-holding-heart mr-2" style="color: #FF69B4;"></i>Open when you feel alone
+                            <button onclick="showModal('feelAlone')"
+                                class="cute-btn px-4 md:px-6 py-3 rounded-xl text-xs md:text-sm font-cute">
+                                <i class="fas fa-hand-holding-heart mr-2" style="color: #FF69B4;"></i>Open when you feel
+                                alone
                             </button>
                         </div>
                     </div>
@@ -845,22 +1034,30 @@
             <div class="glass-card rounded-2xl md:rounded-3xl p-5 md:p-8 mb-8 md:mb-12 reveal">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                     <div class="w-full md:w-1/3">
-                        <div class="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex items-center justify-center" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                        <div class="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
                             <i class="fas fa-music text-5xl md:text-7xl text-white/80"></i>
-                            <button class="play-btn absolute w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-lg" onclick="playVideo('dQw4w9WgXcQ')">
+                            <button
+                                class="play-btn absolute w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-lg"
+                                onclick="playVideo('E_SbwSe15y0')">
                                 <i class="fas fa-play text-2xl md:text-3xl text-white ml-1"></i>
                             </button>
                         </div>
                     </div>
                     <div class="w-full md:w-2/3 text-center md:text-left">
-                        <span class="text-xs md:text-sm font-cute uppercase tracking-wider" style="color: #FF69B4;">Now Playing</span>
-                        <h3 class="text-2xl md:text-3xl font-serif mt-1 md:mt-2 mb-2 gradient-text-rose">Our Special Song</h3>
-                        <p class="text-gray-500 mb-4 md:mb-6 font-cute text-sm md:text-base">This song captures everything I feel when I think of you.</p>
+                        <span class="text-xs md:text-sm font-cute uppercase tracking-wider" style="color: #FF69B4;">Now
+                            Playing</span>
+                        <h3 class="text-2xl md:text-3xl font-serif mt-1 md:mt-2 mb-2 gradient-text-rose">Our Special
+                            Song</h3>
+                        <p class="text-gray-500 mb-4 md:mb-6 font-cute text-sm md:text-base">This song captures
+                            everything I feel when I think of you.</p>
                         <div class="flex items-center justify-center md:justify-start gap-3 md:gap-4">
-                            <button onclick="playVideo('dQw4w9WgXcQ')" class="play-btn px-6 md:px-8 py-3 md:py-4 rounded-full text-white font-cute shadow-lg text-sm md:text-base">
+                            <button onclick="playVideo('E_SbwSe15y0')"
+                                class="play-btn px-6 md:px-8 py-3 md:py-4 rounded-full text-white font-cute shadow-lg text-sm md:text-base">
                                 <i class="fas fa-play mr-2"></i>Play on YouTube
                             </button>
-                            <button class="glass-card w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center hover:scale-110 transition">
+                            <button
+                                class="glass-card w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center hover:scale-110 transition">
                                 <i class="fas fa-heart text-lg md:text-xl" style="color: #FF69B4;"></i>
                             </button>
                         </div>
@@ -871,105 +1068,137 @@
             <!-- Playlist Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <!-- Song Card 1 -->
-                <div class="playlist-card glass-card p-4 md:p-6 reveal" onclick="playVideo('3JZ_D3ELwOQ')">
+                <div class="playlist-card glass-card p-4 md:p-6 reveal" onclick="playVideo('Sfd5X--L9Zc')">
                     <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
                             <i class="fas fa-music text-lg md:text-2xl text-white"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Perfect</h4>
-                            <p class="text-xs md:text-sm text-gray-400 truncate">Ed Sheeran</p>
+                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Jiya Kori
+                                Kori
+                                Khando</h4>
+                            <p class="text-xs md:text-sm text-gray-400 truncate">Shreya Ghoshal</p>
                         </div>
-                        <button class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+                        <button
+                            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
                             <i class="fas fa-play text-white text-xs md:text-sm ml-0.5"></i>
                         </button>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"I found a love for me"</p>
+                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"Jiya Kori Kori Khando"</p>
                 </div>
 
                 <!-- Song Card 2 -->
-                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.1s" onclick="playVideo('450p7goxZqg')">
+                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.1s"
+                    onclick="playVideo('3lDJZr6kbsg')">
                     <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #FFD700, #FFA500);">
                             <i class="fas fa-music text-lg md:text-2xl text-white"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">All of Me</h4>
-                            <p class="text-xs md:text-sm text-gray-400 truncate">John Legend</p>
+                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">
+                                Apna Bana Le
+                            </h4>
+                            <p class="text-xs md:text-sm text-gray-400 truncate">Sachin-Jigar </p>
                         </div>
-                        <button class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                        <button
+                            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #FFD700, #FFA500);">
                             <i class="fas fa-play text-white text-xs md:text-sm ml-0.5"></i>
                         </button>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"Give your all to me"</p>
+                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"Apna Bana Le piya"</p>
                 </div>
 
                 <!-- Song Card 3 -->
-                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.2s" onclick="playVideo('rbv4N3sR5ac')">
+                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.2s"
+                    onclick="playVideo('gRRMSF0nB0c')">
                     <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
                             <i class="fas fa-music text-lg md:text-2xl text-white"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">A Thousand Years</h4>
-                            <p class="text-xs md:text-sm text-gray-400 truncate">Christina Perri</p>
+                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Jugraafiya
+                            </h4>
+                            <p class="text-xs md:text-sm text-gray-400 truncate">Udit Narayan & Shreya Ghoshal</p>
                         </div>
-                        <button class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
+                        <button
+                            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #DA70D6, #FF69B4);">
                             <i class="fas fa-play text-white text-xs md:text-sm ml-0.5"></i>
                         </button>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"I have loved you for a thousand years"</p>
+                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"Krke Gustakhiyan ...."</p>
                 </div>
 
                 <!-- Song Card 4 -->
-                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.3s" onclick="playVideo('2Vv-BfVoq4g')">
+                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.3s"
+                    onclick="playVideo('JtnPpxe8K7c')">
                     <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
                             <i class="fas fa-music text-lg md:text-2xl text-white"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Photograph</h4>
-                            <p class="text-xs md:text-sm text-gray-400 truncate">Ed Sheeran</p>
+                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Dil Diyan
+                                Gallan
+                            </h4>
+                            <p class="text-xs md:text-sm text-gray-400 truncate"> Vishal-Shekhar</p>
                         </div>
-                        <button class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                        <button
+                            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
                             <i class="fas fa-play text-white text-xs md:text-sm ml-0.5"></i>
                         </button>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"Loving can heal, loving can mend"</p>
+                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"Dil diya gallan"</p>
                 </div>
 
                 <!-- Song Card 5 -->
-                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.4s" onclick="playVideo('RgKAFK5djSk')">
+                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.4s"
+                    onclick="playVideo('iv7lcUkFVSc')">
                     <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FF69B4, #FF1493);">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #FF69B4, #FF1493);">
                             <i class="fas fa-music text-lg md:text-2xl text-white"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">See You Again</h4>
-                            <p class="text-xs md:text-sm text-gray-400 truncate">Wiz Khalifa ft. Charlie Puth</p>
+                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">O Re Piya
+                            </h4>
+                            <p class="text-xs md:text-sm text-gray-400 truncate">Rahat Fateh Ali Khan</p>
                         </div>
-                        <button class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FF69B4, #FF1493);">
+                        <button
+                            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #FF69B4, #FF1493);">
                             <i class="fas fa-play text-white text-xs md:text-sm ml-0.5"></i>
                         </button>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"It's been a long day without you"</p>
+                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"oo re piyaa"</p>
                 </div>
 
                 <!-- Song Card 6 -->
-                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.5s" onclick="playVideo('pRpeEdMmmQ0')">
+                <div class="playlist-card glass-card p-4 md:p-6 reveal" style="transition-delay: 0.5s"
+                    onclick="playVideo('hhdSyBHuI88')">
                     <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
                             <i class="fas fa-music text-lg md:text-2xl text-white"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Shape of You</h4>
-                            <p class="text-xs md:text-sm text-gray-400 truncate">Ed Sheeran</p>
+                            <h4 class="font-cute font-semibold text-gray-700 text-sm md:text-base truncate">Zaalima
+                            </h4>
+                            <p class="text-xs md:text-sm text-gray-400 truncate">Arijit Singh & Harshdeep K </p>
                         </div>
-                        <button class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
+                        <button
+                            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                            style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
                             <i class="fas fa-play text-white text-xs md:text-sm ml-0.5"></i>
                         </button>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"I'm in love with your body"</p>
+                    <p class="text-xs text-gray-400 mt-2 md:mt-3 italic truncate">"o zaalima"</p>
                 </div>
             </div>
         </div>
@@ -986,29 +1215,36 @@
                     <img src="chocolate_cute.png" alt="Chocolate" class="w-14 h-14 md:w-20 md:h-20 object-contain">
                     <img src="ice_cream_cute.png" alt="Ice Cream" class="w-14 h-14 md:w-20 md:h-20 object-contain">
                 </div>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif reveal gradient-text-rose">A Few Things I Never Say Enough</h2>
-                <p class="text-gray-500 mt-3 font-cute reveal text-sm md:text-base">Hover over the cards to reveal my heart</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif reveal gradient-text-rose">A Few Things I Never
+                    Say Enough</h2>
+                <p class="text-gray-500 mt-3 font-cute reveal text-sm md:text-base">Hover over the cards to reveal my
+                    heart</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Card 1 -->
                 <div class="letter-card reveal" onclick="this.classList.toggle('flipped')">
                     <div class="letter-inner">
                         <div class="letter-front glass-card flex items-center">
                             <div class="text-center w-full">
-                                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center"
+                                    style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
                                     <i class="fas fa-heart text-white text-2xl md:text-3xl"></i>
                                 </div>
-                                <h3 class="text-xl md:text-2xl font-bold gradient-text-rose font-cute">Why I Love You</h3>
-                                <p class="text-xs md:text-sm text-gray-400 mt-3 md:mt-4 font-cute">Tap to read the truth...</p>
+                                <h3 class="text-xl md:text-2xl font-bold gradient-text-rose font-cute">Why I Love You
+                                </h3>
+                                <p class="text-xs md:text-sm text-gray-400 mt-3 md:mt-4 font-cute">Tap to read the
+                                    truth...</p>
                                 <div class="mt-4 md:mt-6">
-                                    <img src="teddy_bear_cute.png" alt="Teddy" class="w-12 h-12 md:w-16 md:h-16 mx-auto opacity-50">
+                                    <img src="teddy_bear_cute.png" alt="Teddy"
+                                        class="w-12 h-12 md:w-16 md:h-16 mx-auto opacity-50">
                                 </div>
                             </div>
                         </div>
                         <div class="letter-back border-2" style="border-color: #FFB6C1;">
                             <p class="font-handwriting text-lg md:text-2xl leading-relaxed" style="color: #FF69B4;">
-                                I love the way your mind works, the way you laugh when you're tired, and how you make me feel like the best version of myself even from thousands of miles away.
+                                I love the way your mind works, the way you laugh when you're tired, and how you make me
+                                feel like the best version of myself even from thousands of miles away.
                             </p>
                             <div class="mt-4 md:mt-6 text-center">
                                 <i class="fas fa-heart text-xl md:text-2xl heart-beat" style="color: #FF69B4;"></i>
@@ -1018,23 +1254,28 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="letter-card reveal" style="transition-delay: 0.2s" onclick="this.classList.toggle('flipped')">
+                <div class="letter-card reveal" style="transition-delay: 0.2s"
+                    onclick="this.classList.toggle('flipped')">
                     <div class="letter-inner">
                         <div class="letter-front glass-card flex items-center">
                             <div class="text-center w-full">
-                                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center"
+                                    style="background: linear-gradient(135deg, #FFD700, #FFA500);">
                                     <i class="fas fa-star text-white text-2xl md:text-3xl"></i>
                                 </div>
-                                <h3 class="text-xl md:text-2xl font-bold gradient-text-gold font-cute">What You Mean To Me</h3>
+                                <h3 class="text-xl md:text-2xl font-bold gradient-text-gold font-cute">What You Mean To
+                                    Me</h3>
                                 <p class="text-xs md:text-sm text-gray-400 mt-3 md:mt-4 font-cute">Tap to reveal...</p>
                                 <div class="mt-4 md:mt-6">
-                                    <img src="chocolate_cute.png" alt="Chocolate" class="w-12 h-12 md:w-16 md:h-16 mx-auto opacity-50">
+                                    <img src="chocolate_cute.png" alt="Chocolate"
+                                        class="w-12 h-12 md:w-16 md:h-16 mx-auto opacity-50">
                                 </div>
                             </div>
                         </div>
                         <div class="letter-back border-2" style="border-color: #FFD700;">
                             <p class="font-handwriting text-lg md:text-2xl leading-relaxed" style="color: #FFA500;">
-                                You are my anchor. In a world that's often loud and chaotic, you are the quiet peace I come home to every single day.
+                                You are my anchor. In a world that's often loud and chaotic, you are the quiet peace I
+                                come home to every single day.
                             </p>
                             <div class="mt-4 md:mt-6 text-center">
                                 <i class="fas fa-star text-xl md:text-2xl heart-beat" style="color: #FFD700;"></i>
@@ -1044,23 +1285,28 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="letter-card reveal" style="transition-delay: 0.4s" onclick="this.classList.toggle('flipped')">
+                <div class="letter-card reveal" style="transition-delay: 0.4s"
+                    onclick="this.classList.toggle('flipped')">
                     <div class="letter-inner">
                         <div class="letter-front glass-card flex items-center">
                             <div class="text-center w-full">
-                                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center"
+                                    style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
                                     <i class="fas fa-feather text-white text-2xl md:text-3xl"></i>
                                 </div>
                                 <h3 class="text-xl md:text-2xl font-bold gradient-text font-cute">My Promise</h3>
-                                <p class="text-xs md:text-sm text-gray-400 mt-3 md:mt-4 font-cute">Tap to see my word...</p>
+                                <p class="text-xs md:text-sm text-gray-400 mt-3 md:mt-4 font-cute">Tap to see my word...
+                                </p>
                                 <div class="mt-4 md:mt-6">
-                                    <img src="ice_cream_cute.png" alt="Ice Cream" class="w-12 h-12 md:w-16 md:h-16 mx-auto opacity-50">
+                                    <img src="ice_cream_cute.png" alt="Ice Cream"
+                                        class="w-12 h-12 md:w-16 md:h-16 mx-auto opacity-50">
                                 </div>
                             </div>
                         </div>
                         <div class="letter-back border-2" style="border-color: #DA70D6;">
                             <p class="font-handwriting text-lg md:text-2xl leading-relaxed" style="color: #DA70D6;">
-                                I promise to always be your safe place. To listen, to hold space for your dreams, and to never stop showing you how much you are valued.
+                                I promise to always be your safe place. To listen, to hold space for your dreams, and to
+                                never stop showing you how much you are valued.
                             </p>
                             <div class="mt-4 md:mt-6 text-center">
                                 <i class="fas fa-feather text-xl md:text-2xl heart-beat" style="color: #DA70D6;"></i>
@@ -1077,35 +1323,43 @@
     <!-- 6. PARALLEL UNIVERSE -->
     <section class="relative min-h-screen py-16 md:py-24 overflow-hidden flex items-center justify-center z-10">
         <div id="star-field" class="absolute inset-0 pointer-events-none"></div>
-        
+
         <div class="z-10 text-center max-w-5xl px-4 md:px-6">
             <div class="mb-8 md:mb-12 reveal">
                 <img src="hearts_decoration.png" alt="Hearts" class="w-20 h-20 md:w-32 md:h-32 mx-auto opacity-70">
             </div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-3 md:mb-4 reveal gradient-text">Our Parallel Universe</h2>
-            <p class="text-gray-500 mb-12 md:mb-16 font-cute reveal text-sm md:text-base">Where our souls meet beyond distance</p>
-            
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-3 md:mb-4 reveal gradient-text">Our Parallel
+                Universe</h2>
+            <p class="text-gray-500 mb-12 md:mb-16 font-cute reveal text-sm md:text-base">Where our souls meet beyond
+                distance</p>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                 <div class="reveal">
-                    <div class="w-28 h-28 md:w-36 md:h-36 rounded-full glass-card flex items-center justify-center mx-auto mb-4 md:mb-6 hover:scale-105 transition-transform" style="box-shadow: 0 0 30px rgba(135, 206, 235, 0.25);">
+                    <div class="w-28 h-28 md:w-36 md:h-36 rounded-full glass-card flex items-center justify-center mx-auto mb-4 md:mb-6 hover:scale-105 transition-transform"
+                        style="box-shadow: 0 0 30px rgba(135, 206, 235, 0.25);">
                         <i class="fas fa-phone-alt text-2xl md:text-3xl" style="color: #87CEEB;"></i>
                     </div>
                     <h4 class="text-lg md:text-xl font-bold font-cute gradient-text">First Call Galaxy</h4>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 italic font-cute">Where 6 hours felt like 6 minutes.</p>
+                    <p class="text-xs md:text-sm text-gray-400 mt-2 italic font-cute">Where 6 hours felt like 6 minutes.
+                    </p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s">
-                    <div class="w-32 h-32 md:w-44 md:h-44 rounded-full glass-card flex items-center justify-center mx-auto mb-4 md:mb-6 hover:scale-105 transition-transform" style="box-shadow: 0 0 40px rgba(218, 112, 214, 0.25);">
+                    <div class="w-32 h-32 md:w-44 md:h-44 rounded-full glass-card flex items-center justify-center mx-auto mb-4 md:mb-6 hover:scale-105 transition-transform"
+                        style="box-shadow: 0 0 40px rgba(218, 112, 214, 0.25);">
                         <i class="fas fa-moon text-3xl md:text-4xl" style="color: #DA70D6;"></i>
                     </div>
                     <h4 class="text-lg md:text-xl font-bold font-cute gradient-text-rose">Late Night Planet</h4>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 italic font-cute">Whispers in the dark that built our foundation.</p>
+                    <p class="text-xs md:text-sm text-gray-400 mt-2 italic font-cute">Whispers in the dark that built
+                        our foundation.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.4s">
-                    <div class="w-28 h-28 md:w-36 md:h-36 rounded-full glass-card flex items-center justify-center mx-auto mb-4 md:mb-6 hover:scale-105 transition-transform" style="box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);">
+                    <div class="w-28 h-28 md:w-36 md:h-36 rounded-full glass-card flex items-center justify-center mx-auto mb-4 md:mb-6 hover:scale-105 transition-transform"
+                        style="box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);">
                         <i class="fas fa-home text-2xl md:text-3xl" style="color: #FFD700;"></i>
                     </div>
                     <h4 class="text-lg md:text-xl font-bold font-cute gradient-text-gold">Future Home Star</h4>
-                    <p class="text-xs md:text-sm text-gray-400 mt-2 italic font-cute">A place that isn't on a map yet, but exists in our hearts.</p>
+                    <p class="text-xs md:text-sm text-gray-400 mt-2 italic font-cute">A place that isn't on a map yet,
+                        but exists in our hearts.</p>
                 </div>
             </div>
         </div>
@@ -1123,64 +1377,83 @@
                         <h2 class="text-3xl md:text-4xl font-serif gradient-text">The Love Dashboard</h2>
                     </div>
                     <p class="text-gray-500 mb-6 md:mb-8 leading-relaxed font-cute text-sm md:text-base">
-                        If our relationship was an app, it would be the highest rated in the store. We're breaking records every day just by being us.
+                        If our relationship was an app, it would be the highest rated in the store. We're breaking
+                        records every day just by being us.
                     </p>
                     <div class="space-y-3 md:space-y-4">
-                        <div class="glass-card p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:scale-[1.02] transition-transform">
-                            <div class="p-3 md:p-4 rounded-xl flex-shrink-0" style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
+                        <div
+                            class="glass-card p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:scale-[1.02] transition-transform">
+                            <div class="p-3 md:p-4 rounded-xl flex-shrink-0"
+                                style="background: linear-gradient(135deg, #98D8C8, #87CEEB);">
                                 <i class="fas fa-check text-white text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm md:text-base font-bold font-cute text-gray-700">Long-Distance Champions</p>
+                                <p class="text-sm md:text-base font-bold font-cute text-gray-700">Long-Distance
+                                    Champions</p>
                                 <p class="text-xs md:text-sm text-gray-400 font-cute">Achievement Unlocked</p>
                             </div>
                         </div>
-                        <div class="glass-card p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:scale-[1.02] transition-transform">
-                            <div class="p-3 md:p-4 rounded-xl flex-shrink-0" style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                        <div
+                            class="glass-card p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:scale-[1.02] transition-transform">
+                            <div class="p-3 md:p-4 rounded-xl flex-shrink-0"
+                                style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
                                 <i class="fas fa-smile text-white text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm md:text-base font-bold font-cute text-gray-700">1,000,000+ Smiles Caused</p>
+                                <p class="text-sm md:text-base font-bold font-cute text-gray-700">1,000,000+ Smiles
+                                    Caused</p>
                                 <p class="text-xs md:text-sm text-gray-400 font-cute">And counting daily</p>
                             </div>
                         </div>
-                        <div class="glass-card p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:scale-[1.02] transition-transform">
-                            <div class="p-3 md:p-4 rounded-xl flex-shrink-0" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                        <div
+                            class="glass-card p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:scale-[1.02] transition-transform">
+                            <div class="p-3 md:p-4 rounded-xl flex-shrink-0"
+                                style="background: linear-gradient(135deg, #FFD700, #FFA500);">
                                 <i class="fas fa-heart text-white text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm md:text-base font-bold font-cute text-gray-700">Infinite Love Points</p>
+                                <p class="text-sm md:text-base font-bold font-cute text-gray-700">Infinite Love Points
+                                </p>
                                 <p class="text-xs md:text-sm text-gray-400 font-cute">Level: Soulmates</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="reveal flex justify-center" style="transition-delay: 0.3s">
-                    <div class="phone-mockup relative w-full max-w-[260px] md:max-w-[300px] aspect-[9/19] rounded-[2rem] md:rounded-[3rem] border-[6px] md:border-8 shadow-2xl overflow-hidden p-4 md:p-6" style="background: linear-gradient(180deg, #FFF8F0, #FFE4E1); border-color: #FFB6C1;">
-                        <div class="w-1/2 h-5 md:h-6 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl" style="background: #FFB6C1;"></div>
+                    <div class="phone-mockup relative w-full max-w-[260px] md:max-w-[300px] aspect-[9/19] rounded-[2rem] md:rounded-[3rem] border-[6px] md:border-8 shadow-2xl overflow-hidden p-4 md:p-6"
+                        style="background: linear-gradient(180deg, #FFF8F0, #FFE4E1); border-color: #FFB6C1;">
+                        <div class="w-1/2 h-5 md:h-6 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl"
+                            style="background: #FFB6C1;"></div>
                         <div class="mt-10 md:mt-12 space-y-3 md:space-y-4">
-                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4" style="border-color: #FF69B4;">
+                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4"
+                                style="border-color: #FF69B4;">
                                 <p class="font-bold font-cute text-gray-700">New Notification</p>
                                 <p class="opacity-70 font-cute text-gray-500">He's thinking about you right now</p>
                             </div>
-                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4" style="border-color: #87CEEB;">
+                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4"
+                                style="border-color: #87CEEB;">
                                 <p class="font-bold font-cute text-gray-700">Calendar Update</p>
                                 <p class="opacity-70 font-cute text-gray-500">One day closer to seeing you.</p>
                             </div>
-                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4" style="border-color: #FFD700;">
+                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4"
+                                style="border-color: #FFD700;">
                                 <p class="font-bold font-cute text-gray-700">Reminder</p>
-                                <p class="opacity-70 font-cute text-gray-500">You are the most beautiful person I know.</p>
+                                <p class="opacity-70 font-cute text-gray-500">You are the most beautiful person I know.
+                                </p>
                             </div>
-                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4" style="border-color: #DA70D6;">
+                            <div class="glass-card p-3 md:p-4 rounded-lg md:rounded-xl text-xs border-l-4"
+                                style="border-color: #DA70D6;">
                                 <p class="font-bold font-cute text-gray-700">Love Status</p>
                                 <p class="opacity-70 font-cute text-gray-500">Distance: Far | Hearts: Connected</p>
                             </div>
                         </div>
                         <div class="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                                style="background: linear-gradient(135deg, #FF69B4, #FFB6C1);">
                                 <i class="fas fa-phone text-white text-sm md:text-base"></i>
                             </div>
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                                style="background: linear-gradient(135deg, #87CEEB, #DA70D6);">
                                 <i class="fas fa-video text-white text-sm md:text-base"></i>
                             </div>
                         </div>
@@ -1201,29 +1474,40 @@
             <div class="mb-6 md:mb-8 reveal">
                 <img src="ice_cream_cute.png" alt="Ice Cream" class="w-16 h-16 md:w-24 md:h-24 mx-auto">
             </div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-3 md:mb-4 reveal gradient-text-rose">Your Digital Sanctuary</h2>
-            <p class="text-gray-500 mb-8 md:mb-12 reveal font-cute text-base md:text-lg">How are you feeling right now, {{NICKNAME}}?</p>
-            
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-3 md:mb-4 reveal gradient-text-rose">Your Digital
+                Sanctuary</h2>
+            <p class="text-gray-500 mb-8 md:mb-12 reveal font-cute text-base md:text-lg">How are you feeling right now,
+                {{NICKNAME}}?</p>
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 reveal">
-                <button onclick="moodResponse('miss')" class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
-                    <i class="fas fa-heart text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform" style="color: #FF69B4;"></i>
+                <button onclick="moodResponse('miss')"
+                    class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-heart text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform"
+                        style="color: #FF69B4;"></i>
                     <p class="text-xs md:text-sm font-cute text-gray-600">I miss you</p>
                 </button>
-                <button onclick="moodResponse('sad')" class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
-                    <i class="fas fa-cloud-rain text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform" style="color: #87CEEB;"></i>
+                <button onclick="moodResponse('sad')"
+                    class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-cloud-rain text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform"
+                        style="color: #87CEEB;"></i>
                     <p class="text-xs md:text-sm font-cute text-gray-600">I'm sad</p>
                 </button>
-                <button onclick="moodResponse('anxious')" class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
-                    <i class="fas fa-wind text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform" style="color: #FFD700;"></i>
+                <button onclick="moodResponse('anxious')"
+                    class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-wind text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform"
+                        style="color: #FFD700;"></i>
                     <p class="text-xs md:text-sm font-cute text-gray-600">I need comfort</p>
                 </button>
-                <button onclick="moodResponse('happy')" class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
-                    <i class="fas fa-sun text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform" style="color: #FFA500;"></i>
+                <button onclick="moodResponse('happy')"
+                    class="glass-card py-6 md:py-8 rounded-xl md:rounded-2xl hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-sun text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform"
+                        style="color: #FFA500;"></i>
                     <p class="text-xs md:text-sm font-cute text-gray-600">I'm happy</p>
                 </button>
             </div>
 
-            <div id="mood-box" class="mt-8 md:mt-12 glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[120px] md:min-h-[150px] flex items-center justify-center hidden">
+            <div id="mood-box"
+                class="mt-8 md:mt-12 glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[120px] md:min-h-[150px] flex items-center justify-center hidden">
                 <p id="mood-text" class="text-base md:text-xl font-handwriting italic" style="color: #FF69B4;"></p>
             </div>
         </div>
@@ -1236,12 +1520,16 @@
         <div class="max-w-4xl mx-auto text-center">
             <div class="mb-6 md:mb-8 reveal">
                 <div class="flex justify-center gap-4 md:gap-6">
-                    <img src="teddy_bear_cute.png" alt="Teddy" class="w-14 h-14 md:w-20 md:h-20 object-contain heart-beat">
-                    <img src="chocolate_cute.png" alt="Chocolate" class="w-14 h-14 md:w-20 md:h-20 object-contain heart-beat" style="animation-delay: 0.3s">
-                    <img src="ice_cream_cute.png" alt="Ice Cream" class="w-14 h-14 md:w-20 md:h-20 object-contain heart-beat" style="animation-delay: 0.6s">
+                    <img src="teddy_bear_cute.png" alt="Teddy"
+                        class="w-14 h-14 md:w-20 md:h-20 object-contain heart-beat">
+                    <img src="chocolate_cute.png" alt="Chocolate"
+                        class="w-14 h-14 md:w-20 md:h-20 object-contain heart-beat" style="animation-delay: 0.3s">
+                    <img src="ice_cream_cute.png" alt="Ice Cream"
+                        class="w-14 h-14 md:w-20 md:h-20 object-contain heart-beat" style="animation-delay: 0.6s">
                 </div>
             </div>
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif mb-6 md:mb-8 reveal gradient-text">Until We're Together</h2>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif mb-6 md:mb-8 reveal gradient-text">Until We're
+                Together</h2>
             <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 mb-12 md:mb-16 reveal">
                 <div class="countdown-box p-4 md:p-6 rounded-xl md:rounded-2xl">
                     <p id="cd-days" class="text-2xl md:text-4xl lg:text-5xl font-bold gradient-text-rose">--</p>
@@ -1261,26 +1549,33 @@
                 </div>
             </div>
 
-            <div class="max-w-2xl mx-auto text-left glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl mb-10 md:mb-12 reveal">
-                <h3 class="text-lg md:text-xl font-serif mb-4 md:mb-6 gradient-text-rose">The "When I See You" List:</h3>
+            <div
+                class="max-w-2xl mx-auto text-left glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl mb-10 md:mb-12 reveal">
+                <h3 class="text-lg md:text-xl font-serif mb-4 md:mb-6 gradient-text-rose">The "When I See You" List:
+                </h3>
                 <ul class="space-y-3 md:space-y-4 text-gray-600 font-cute text-sm md:text-base">
                     <li class="flex items-center gap-2 md:gap-3">
-                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> A hug that lasts for a thousand miles.
+                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> A hug that lasts for a
+                        thousand miles.
                     </li>
                     <li class="flex items-center gap-2 md:gap-3">
-                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> Watching the sunset without a screen between us.
+                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> Watching the sunset without a
+                        screen between us.
                     </li>
                     <li class="flex items-center gap-2 md:gap-3">
-                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> Cooking a meal and laughing in the same kitchen.
+                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> Cooking a meal and laughing
+                        in the same kitchen.
                     </li>
                     <li class="flex items-center gap-2 md:gap-3">
-                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> Just existing in the same silence.
+                        <i class="fas fa-heart flex-shrink-0" style="color: #FF69B4;"></i> Just existing in the same
+                        silence.
                     </li>
                 </ul>
             </div>
 
             <div class="reveal">
-                <h1 class="text-3xl md:text-4xl lg:text-6xl font-serif mb-4 md:mb-6 gradient-text-rose">I love you, {{HER_NAME}}.</h1>
+                <h1 class="text-3xl md:text-4xl lg:text-6xl font-serif mb-4 md:mb-6 gradient-text-rose">I love you,
+                    mere moteeee.</h1>
                 <p class="text-gray-500 font-cute text-base md:text-lg">Until then, this is my way of holding you.</p>
                 <div class="mt-6 md:mt-8">
                     <i class="fas fa-heart text-4xl md:text-5xl heart-beat" style="color: #FF69B4;"></i>
@@ -1291,32 +1586,42 @@
 
     <!-- Modal for Letters -->
     <div id="letterModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 hidden modal-overlay">
-        <div class="glass-card max-w-md w-full p-6 md:p-10 rounded-2xl md:rounded-3xl relative border-2" style="border-color: #FFB6C1;">
-            <button onclick="closeModal()" class="absolute top-3 right-3 md:top-4 md:right-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:shadow-lg transition" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+        <div class="glass-card max-w-md w-full p-6 md:p-10 rounded-2xl md:rounded-3xl relative border-2"
+            style="border-color: #FFB6C1;">
+            <button onclick="closeModal()"
+                class="absolute top-3 right-3 md:top-4 md:right-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:shadow-lg transition"
+                style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
                 <i class="fas fa-times text-white text-sm md:text-base"></i>
             </button>
             <div class="text-center mb-4 md:mb-6">
                 <img src="teddy_bear_cute.png" alt="Teddy" class="w-16 h-16 md:w-24 md:h-24 mx-auto">
             </div>
-            <div id="modalContent" class="font-handwriting text-lg md:text-2xl leading-relaxed text-center" style="color: #FF69B4;"></div>
+            <div id="modalContent" class="font-handwriting text-lg md:text-2xl leading-relaxed text-center"
+                style="color: #FF69B4;"></div>
         </div>
     </div>
 
     <!-- YouTube Player Modal -->
     <div id="youtubeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 hidden modal-overlay">
-        <div class="glass-card max-w-4xl w-full rounded-2xl md:rounded-3xl overflow-hidden relative border-2" style="border-color: #FFB6C1;">
-            <button onclick="closeYoutubeModal()" class="absolute top-3 right-3 md:top-4 md:right-4 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:shadow-lg transition" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
+        <div class="glass-card max-w-4xl w-full rounded-2xl md:rounded-3xl overflow-hidden relative border-2"
+            style="border-color: #FFB6C1;">
+            <button onclick="closeYoutubeModal()"
+                class="absolute top-3 right-3 md:top-4 md:right-4 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:shadow-lg transition"
+                style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);">
                 <i class="fas fa-times text-white text-sm md:text-base"></i>
             </button>
             <div class="aspect-video">
-                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
     <!-- Music Toggle -->
     <div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40">
-        <button onclick="toggleMusic()" class="w-12 h-12 md:w-14 md:h-14 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 pulse-glow">
+        <button onclick="toggleMusic()"
+            class="w-12 h-12 md:w-14 md:h-14 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 pulse-glow">
             <i id="music-icon" class="fas fa-volume-mute text-lg md:text-xl" style="color: #FF69B4;"></i>
         </button>
     </div>
@@ -1325,7 +1630,7 @@
         // Create Floating Hearts - Reduced count for performance
         const floatingHeartsContainer = document.getElementById('floatingHearts');
         const heartEmojis = ['', '', '✨'];
-        
+
         for (let i = 0; i < 12; i++) {
             const heart = document.createElement('div');
             heart.className = 'floating-heart';
@@ -1388,8 +1693,10 @@
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter('km-counter', 5240, 2000);
-                    animateCounter('days-counter', 428, 2000);
+                    animateCounter('km-counter', 200, 2000);
+                    // Start the live time together counter
+                    updateTimeTogether();
+                    setInterval(updateTimeTogether, 1000);
                     counterObserver.unobserve(entry.target);
                 }
             });
@@ -1400,26 +1707,48 @@
             counterObserver.observe(kmCounter);
         }
 
+        // Live Time Together Counter (from April 15, 2023)
+        function updateTimeTogether() {
+            const startDate = new Date('2023-04-15T00:00:00').getTime();
+            const now = new Date().getTime();
+            const elapsed = now - startDate;
+
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+            const daysElem = document.getElementById('tt-days');
+            const hoursElem = document.getElementById('tt-hours');
+            const minsElem = document.getElementById('tt-mins');
+            const secsElem = document.getElementById('tt-secs');
+
+            if (daysElem) daysElem.innerText = days;
+            if (hoursElem) hoursElem.innerText = hours;
+            if (minsElem) minsElem.innerText = minutes;
+            if (secsElem) secsElem.innerText = seconds;
+        }
+
         function animateCounter(id, target, duration) {
             const elem = document.getElementById(id);
             if (!elem) return;
-            
+
             const start = 0;
             const startTime = performance.now();
-            
+
             function update(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
                 const current = Math.floor(start + (target - start) * easeProgress);
-                
+
                 elem.innerText = current.toLocaleString();
-                
+
                 if (progress < 1) {
                     requestAnimationFrame(update);
                 }
             }
-            
+
             requestAnimationFrame(update);
         }
 
@@ -1427,7 +1756,7 @@
         const moodMessages = {
             miss: "I miss you more than these pixels can say. Close your eyes, take a deep breath, and imagine I'm right there holding your hand. I'm always with you.",
             sad: "It's okay to have heavy days. I wish I could be there to just sit with you in the quiet. You're so strong, but you don't have to be strong right now. I've got you.",
-            anxious: "Slow down, {{NICKNAME}}. Focus on my voice in your head. Everything is going to be okay. We are a team, and we can handle anything life throws at us.",
+            anxious: "Slow down, Bchaaa. Focus on my voice in your head. Everything is going to be okay. We are a team, and we can handle anything life throws at us.",
             happy: "Your happiness is my favorite thing in the world! Seeing you glow makes every mile worth it. Keep that beautiful smile shining, it lights up my whole world."
         };
 
@@ -1507,7 +1836,7 @@
         function toggleMusic() {
             const icon = document.getElementById('music-icon');
             musicPlaying = !musicPlaying;
-            
+
             if (musicPlaying) {
                 icon.classList.remove('fa-volume-mute');
                 icon.classList.add('fa-volume-up');
@@ -1535,10 +1864,11 @@
 
         // Touch events for letter cards on mobile
         document.querySelectorAll('.letter-card').forEach(card => {
-            card.addEventListener('touchstart', function() {
+            card.addEventListener('touchstart', function () {
                 this.classList.toggle('flipped');
             }, { passive: true });
         });
     </script>
 </body>
+
 </html>
